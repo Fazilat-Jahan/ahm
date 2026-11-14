@@ -1,0 +1,618 @@
+{
+  "generatedFrom": "frontend/config/thresholds.ts and frontend/config/environments.ts — do not edit by hand; see frontend/tests/rules/serverParity.test.ts",
+  "rulesVersion": "1.1.0",
+  "adaptation": {
+    "ruleDays": 3,
+    "softenDays": 7,
+    "softenSymptoms": [
+      "nausea_vomiting",
+      "dizziness",
+      "facial_puffiness",
+      "ear_congestion"
+    ]
+  },
+  "indicators": [
+    {
+      "id": "heart_rate",
+      "label": "Resting heart rate",
+      "unit": "bpm",
+      "bands": [
+        {
+          "status": "critical",
+          "min": 131
+        },
+        {
+          "status": "red",
+          "max": 39
+        },
+        {
+          "status": "red",
+          "min": 111,
+          "max": 130
+        },
+        {
+          "status": "yellow",
+          "max": 49,
+          "min": 40
+        },
+        {
+          "status": "yellow",
+          "min": 101,
+          "max": 110
+        },
+        {
+          "status": "green",
+          "min": 50,
+          "max": 100
+        }
+      ],
+      "hazards": [
+        "gravity"
+      ],
+      "whyItMatters": "Cardiovascular deconditioning, stress, dehydration, and arrhythmia all show up in resting heart rate.",
+      "howToMeasure": [
+        "Sit quietly for a few minutes before measuring.",
+        "Use a wrist/chest sensor, or count your pulse for 30 seconds and double it."
+      ],
+      "tips": {
+        "green": [
+          "Heart rate is in the normal range."
+        ],
+        "yellow": [
+          "Rest for 10-15 minutes, then re-measure."
+        ],
+        "red": [
+          "Sit down, rest, and contact the flight surgeon."
+        ],
+        "critical": [
+          "Stop activity, sit or secure yourself, and contact the flight surgeon now."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "bp_systolic",
+      "label": "Blood pressure (systolic)",
+      "unit": "mmHg",
+      "bands": [
+        {
+          "status": "critical",
+          "min": 180
+        },
+        {
+          "status": "red",
+          "max": 84
+        },
+        {
+          "status": "red",
+          "min": 140,
+          "max": 179
+        },
+        {
+          "status": "yellow",
+          "min": 85,
+          "max": 89
+        },
+        {
+          "status": "yellow",
+          "min": 130,
+          "max": 139
+        },
+        {
+          "status": "green",
+          "min": 90,
+          "max": 129
+        }
+      ],
+      "hazards": [
+        "gravity"
+      ],
+      "whyItMatters": "Fluid shift in micro-g changes blood pressure and cardiovascular risk.",
+      "howToMeasure": [
+        "Use an automatic cuff, seated and relaxed."
+      ],
+      "tips": {
+        "green": [
+          "Blood pressure is in the normal range."
+        ],
+        "yellow": [
+          "Rest for 10-15 minutes, then re-measure."
+        ],
+        "red": [
+          "Sit/rest and contact the flight surgeon."
+        ],
+        "critical": [
+          "Contact the flight surgeon now."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "bp_diastolic",
+      "label": "Blood pressure (diastolic)",
+      "unit": "mmHg",
+      "bands": [
+        {
+          "status": "critical",
+          "min": 120
+        },
+        {
+          "status": "red",
+          "max": 54
+        },
+        {
+          "status": "red",
+          "min": 90,
+          "max": 119
+        },
+        {
+          "status": "yellow",
+          "min": 85,
+          "max": 89
+        },
+        {
+          "status": "green",
+          "min": 60,
+          "max": 84
+        }
+      ],
+      "hazards": [
+        "gravity"
+      ],
+      "whyItMatters": "Fluid shift in micro-g changes blood pressure and cardiovascular risk.",
+      "howToMeasure": [
+        "Use an automatic cuff, seated and relaxed."
+      ],
+      "tips": {
+        "green": [
+          "Blood pressure is in the normal range."
+        ],
+        "yellow": [
+          "Rest for 10-15 minutes, then re-measure."
+        ],
+        "red": [
+          "Sit/rest and contact the flight surgeon."
+        ],
+        "critical": [
+          "Contact the flight surgeon now."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "glucose_mgdl",
+      "label": "Fasting blood glucose",
+      "unit": "mg/dL",
+      "bands": [
+        {
+          "status": "critical",
+          "min": 251
+        },
+        {
+          "status": "critical",
+          "max": 53
+        },
+        {
+          "status": "red",
+          "min": 126,
+          "max": 250
+        },
+        {
+          "status": "red",
+          "min": 54,
+          "max": 69
+        },
+        {
+          "status": "yellow",
+          "min": 100,
+          "max": 125
+        },
+        {
+          "status": "green",
+          "min": 70,
+          "max": 99
+        }
+      ],
+      "hazards": [
+        "closed_environment",
+        "distance"
+      ],
+      "whyItMatters": "Insulin resistance and nutrition changes in space show up in fasting glucose.",
+      "howToMeasure": [
+        "Use a finger-prick glucometer while fasting."
+      ],
+      "tips": {
+        "green": [
+          "Glucose is in the normal range."
+        ],
+        "yellow": [
+          "Re-check your diet and hydration; re-measure later."
+        ],
+        "red": [
+          "Contact the flight surgeon."
+        ],
+        "critical": [
+          "Contact the flight surgeon now."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "temperature_c",
+      "label": "Body temperature",
+      "unit": "°C",
+      "bands": [
+        {
+          "status": "critical",
+          "min": 39.5
+        },
+        {
+          "status": "red",
+          "max": 35.79
+        },
+        {
+          "status": "red",
+          "min": 38,
+          "max": 39.4
+        },
+        {
+          "status": "yellow",
+          "min": 35.8,
+          "max": 36
+        },
+        {
+          "status": "yellow",
+          "min": 37.3,
+          "max": 37.9
+        },
+        {
+          "status": "green",
+          "min": 36.1,
+          "max": 37.2
+        }
+      ],
+      "hazards": [
+        "closed_environment",
+        "radiation"
+      ],
+      "whyItMatters": "Infection and immune changes, and heat management in a closed habitat.",
+      "howToMeasure": [
+        "Use an ear, forehead, or oral thermometer."
+      ],
+      "tips": {
+        "green": [
+          "Temperature is in the normal range."
+        ],
+        "yellow": [
+          "Rest and re-measure in a couple of hours."
+        ],
+        "red": [
+          "Isolate, hydrate, and contact the flight surgeon."
+        ],
+        "critical": [
+          "Contact the flight surgeon now."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "spo2",
+      "label": "Blood oxygen (SpO2)",
+      "unit": "%",
+      "bands": [
+        {
+          "status": "critical",
+          "max": 87
+        },
+        {
+          "status": "red",
+          "min": 88,
+          "max": 91
+        },
+        {
+          "status": "yellow",
+          "min": 92,
+          "max": 94
+        },
+        {
+          "status": "green",
+          "min": 95,
+          "max": 100
+        }
+      ],
+      "hazards": [
+        "closed_environment"
+      ],
+      "whyItMatters": "Cabin air quality, CO2 build-up, and habitat pressure all affect SpO2.",
+      "howToMeasure": [
+        "Use a pulse oximeter on a fingertip."
+      ],
+      "tips": {
+        "green": [
+          "SpO2 is in the normal range."
+        ],
+        "yellow": [
+          "Re-check cabin air and re-measure."
+        ],
+        "red": [
+          "Sit down, check cabin/suit O2, alert crew, contact the flight surgeon."
+        ],
+        "critical": [
+          "Sit down, alert crew, and contact the flight surgeon now."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "sleep_hours",
+      "label": "Sleep duration",
+      "unit": "h",
+      "bands": [
+        {
+          "status": "red",
+          "max": 4.99
+        },
+        {
+          "status": "yellow",
+          "min": 5,
+          "max": 6.99
+        },
+        {
+          "status": "yellow",
+          "min": 9.01
+        },
+        {
+          "status": "green",
+          "min": 7,
+          "max": 9
+        }
+      ],
+      "hazards": [
+        "isolation"
+      ],
+      "whyItMatters": "Isolation and circadian disruption are strongly linked to sleep, mood, and performance.",
+      "howToMeasure": [
+        "Log the hours you actually slept, from a sleep diary or wearable."
+      ],
+      "tips": {
+        "green": [
+          "Sleep duration is in the normal range."
+        ],
+        "yellow": [
+          "Try to protect your sleep window tonight."
+        ],
+        "red": [
+          "Talk to a crewmate or the flight surgeon about your sleep."
+        ],
+        "critical": []
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "mood",
+      "label": "Mood",
+      "unit": "/5",
+      "bands": [
+        {
+          "status": "critical",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "status": "red",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "status": "yellow",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "status": "green",
+          "min": 4,
+          "max": 5
+        }
+      ],
+      "hazards": [
+        "isolation",
+        "radiation",
+        "distance"
+      ],
+      "whyItMatters": "Behavioural health and isolation effects show up first in day-to-day mood.",
+      "howToMeasure": [
+        "Rate your mood on the 1-5 emoji scale."
+      ],
+      "tips": {
+        "green": [
+          "Mood is in the normal range."
+        ],
+        "yellow": [
+          "Consider talking to a crewmate today."
+        ],
+        "red": [
+          "Talk to a crewmate and consider a private call with the flight surgeon/counsellor."
+        ],
+        "critical": [
+          "Talk to a crewmate now and contact the flight surgeon/counsellor."
+        ]
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "exercise_minutes",
+      "label": "Exercise (resistance + cardio)",
+      "unit": "min/day",
+      "bands": [
+        {
+          "status": "red",
+          "max": 29
+        },
+        {
+          "status": "yellow",
+          "min": 30,
+          "max": 59
+        },
+        {
+          "status": "green",
+          "min": 60
+        }
+      ],
+      "hazards": [
+        "gravity"
+      ],
+      "whyItMatters": "Bone and muscle protection depend on daily resistance and cardio exercise.",
+      "howToMeasure": [
+        "Log total minutes of resistance and cardio exercise for the day."
+      ],
+      "tips": {
+        "green": [
+          "Exercise target met."
+        ],
+        "yellow": [
+          "Try to fit in more exercise today."
+        ],
+        "red": [
+          "Bone and muscle protection is at risk — prioritise exercise."
+        ],
+        "critical": []
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "water_ml",
+      "label": "Hydration / water intake",
+      "unit": "mL/day",
+      "bands": [
+        {
+          "status": "red",
+          "max": 1499
+        },
+        {
+          "status": "yellow",
+          "min": 1500,
+          "max": 1999
+        },
+        {
+          "status": "green",
+          "min": 2000
+        }
+      ],
+      "hazards": [
+        "closed_environment",
+        "gravity"
+      ],
+      "whyItMatters": "Dehydration risk and fluid shift are both tied to daily water intake.",
+      "howToMeasure": [
+        "Log total water intake for the day."
+      ],
+      "tips": {
+        "green": [
+          "Hydration target met."
+        ],
+        "yellow": [
+          "Drink more water today."
+        ],
+        "red": [
+          "Drink water/electrolytes now and reassess in 2 hours."
+        ],
+        "critical": []
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "radiation_dose_pct",
+      "label": "Radiation dose (% of budget)",
+      "unit": "%",
+      "bands": [
+        {
+          "status": "red",
+          "min": 100.01
+        },
+        {
+          "status": "yellow",
+          "min": 80.01,
+          "max": 100
+        },
+        {
+          "status": "green",
+          "max": 80
+        }
+      ],
+      "hazards": [
+        "radiation"
+      ],
+      "whyItMatters": "Tracking cumulative dose against the mission budget is the main defence against radiation risk.",
+      "howToMeasure": [
+        "Log the daily reading from your personal dosimeter, if available."
+      ],
+      "tips": {
+        "green": [
+          "Within the radiation budget."
+        ],
+        "yellow": [
+          "Approaching the radiation budget — review shelter/storm procedures."
+        ],
+        "red": [
+          "Over the radiation budget — contact the flight surgeon."
+        ],
+        "critical": []
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    },
+    {
+      "id": "team_relations",
+      "label": "Team relations",
+      "unit": "/5",
+      "bands": [
+        {
+          "status": "red",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "status": "yellow",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "status": "green",
+          "min": 4,
+          "max": 5
+        }
+      ],
+      "hazards": [
+        "isolation"
+      ],
+      "whyItMatters": "Inadequate teamwork is its own tracked risk in isolation and confinement.",
+      "howToMeasure": [
+        "Rate how the crew is getting along today, 1-5."
+      ],
+      "tips": {
+        "green": [
+          "Team relations look fine."
+        ],
+        "yellow": [
+          "Keep an eye on crew dynamics."
+        ],
+        "red": [
+          "Talk to a crewmate/commander; mention it to the surgeon/psychologist if it continues."
+        ],
+        "critical": []
+      },
+      "source": "General adult clinical reference (starting default, not a validated space-medicine limit) — see SPEC §3.2",
+      "verified": false
+    }
+  ]
+}

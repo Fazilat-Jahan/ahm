@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["app/tests"]
+# Test databases are temp SQLite files. Keep them next to the project (E:),
+# not in %TEMP% on C:, which is nearly full on this machine.
+addopts = "--basetemp=.pytest_tmp"

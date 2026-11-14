@@ -1,0 +1,3801 @@
+{
+  "generatedFrom": "frontend/lib/rules/engine.ts run over shared/rule-test-vectors.json — do not edit by hand; see frontend/tests/rules/serverParity.test.ts",
+  "rulesVersion": "1.1.0",
+  "results": [
+    {
+      "name": "HR 50 is green (lower green edge)",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 50,
+            "status": "green",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 50bpm is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 49 is yellow (just below green)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 49,
+            "status": "yellow",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 49bpm is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 3,
+            "text": "Rest for 10-15 minutes, then re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HR-01: heart_rate=49 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 40 is yellow (lower yellow edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 40,
+            "status": "yellow",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 40bpm is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 3,
+            "text": "Rest for 10-15 minutes, then re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HR-01: heart_rate=40 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 39 is red (just below yellow-low)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 39,
+            "status": "red",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 39bpm is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 2,
+            "text": "Sit down, rest, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HR-01: heart_rate=39 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 100 is green (upper green edge)",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 100,
+            "status": "green",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 100bpm is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 101 is yellow (just above green)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 101,
+            "status": "yellow",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 101bpm is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 3,
+            "text": "Rest for 10-15 minutes, then re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HR-01: heart_rate=101 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 110 is yellow (upper yellow-high edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 110,
+            "status": "yellow",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 110bpm is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 3,
+            "text": "Rest for 10-15 minutes, then re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HR-01: heart_rate=110 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 111 is red (just above yellow-high)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 111,
+            "status": "red",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 111bpm is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 2,
+            "text": "Sit down, rest, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HR-01: heart_rate=111 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 130 is red (upper red edge)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 130,
+            "status": "red",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 130bpm is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 2,
+            "text": "Sit down, rest, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HR-01: heart_rate=130 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "HR 131 is critical (just above red)",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 131,
+            "status": "critical",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 131bpm is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 1,
+            "text": "Stop activity, sit or secure yourself, and contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "HR-01: heart_rate=131 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "SpO2 95 is green (lower green edge)",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 95,
+            "status": "green",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 95% is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "SpO2 94 is yellow (just below green)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 94,
+            "status": "yellow",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 94% is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SPO2-01-tip",
+            "priority": 3,
+            "text": "Re-check cabin air and re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Blood oxygen (SpO2) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "SPO2-01: spo2=94 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "SpO2 92 is yellow (lower yellow edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 92,
+            "status": "yellow",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 92% is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SPO2-01-tip",
+            "priority": 3,
+            "text": "Re-check cabin air and re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Blood oxygen (SpO2) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "SPO2-01: spo2=92 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "SpO2 91 is red (just below yellow)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 91,
+            "status": "red",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 91% is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SPO2-01-tip",
+            "priority": 2,
+            "text": "Sit down, check cabin/suit O2, alert crew, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Blood oxygen (SpO2) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "SPO2-01: spo2=91 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "SpO2 88 is red (lower red edge)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 88,
+            "status": "red",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 88% is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SPO2-01-tip",
+            "priority": 2,
+            "text": "Sit down, check cabin/suit O2, alert crew, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Blood oxygen (SpO2) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "SPO2-01: spo2=88 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "SpO2 87 is critical (just below red)",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 87,
+            "status": "critical",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 87% is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SPO2-01-tip",
+            "priority": 1,
+            "text": "Sit down, alert crew, and contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "SPO2-01: spo2=87 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "BP worst-of-two: systolic red, diastolic green -> overall red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "bp_systolic",
+            "value": 145,
+            "status": "red",
+            "ruleId": "BP-SYS-01",
+            "message": "Blood pressure (systolic) 145mmHg is red."
+          },
+          {
+            "id": "bp_diastolic",
+            "value": 70,
+            "status": "green",
+            "ruleId": "BP-DIA-01",
+            "message": "Blood pressure (diastolic) 70mmHg is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "BP-SYS-01-tip",
+            "priority": 2,
+            "text": "Sit/rest and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "BP-SYS-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Blood pressure (systolic) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "BP-SYS-01: bp_systolic=145 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "BP worst-of-two: diastolic critical, systolic green -> overall critical",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "bp_systolic",
+            "value": 110,
+            "status": "green",
+            "ruleId": "BP-SYS-01",
+            "message": "Blood pressure (systolic) 110mmHg is green."
+          },
+          {
+            "id": "bp_diastolic",
+            "value": 125,
+            "status": "critical",
+            "ruleId": "BP-DIA-01",
+            "message": "Blood pressure (diastolic) 125mmHg is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "BP-DIA-01-tip",
+            "priority": 1,
+            "text": "Contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "BP-DIA-01: bp_diastolic=125 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 99 is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 99,
+            "status": "green",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 99mg/dL is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 100 is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 100,
+            "status": "yellow",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 100mg/dL is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "GLU-01-tip",
+            "priority": 3,
+            "text": "Re-check your diet and hydration; re-measure later.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Fasting blood glucose after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "GLU-01: glucose_mgdl=100 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 126 is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 126,
+            "status": "red",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 126mg/dL is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "GLU-01-tip",
+            "priority": 2,
+            "text": "Contact the flight surgeon.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Fasting blood glucose after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "GLU-01: glucose_mgdl=126 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 250 is red (upper red edge)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 250,
+            "status": "red",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 250mg/dL is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "GLU-01-tip",
+            "priority": 2,
+            "text": "Contact the flight surgeon.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Fasting blood glucose after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "GLU-01: glucose_mgdl=250 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 251 is critical",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 251,
+            "status": "critical",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 251mg/dL is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "GLU-01-tip",
+            "priority": 1,
+            "text": "Contact the flight surgeon now.",
+            "category": "nutrition"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "GLU-01: glucose_mgdl=251 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 69 is red (low)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 69,
+            "status": "red",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 69mg/dL is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "GLU-01-tip",
+            "priority": 2,
+            "text": "Contact the flight surgeon.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Fasting blood glucose after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "GLU-01: glucose_mgdl=69 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Glucose 53 is critical (low)",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 53,
+            "status": "critical",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 53mg/dL is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "GLU-01-tip",
+            "priority": 1,
+            "text": "Contact the flight surgeon now.",
+            "category": "nutrition"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "GLU-01: glucose_mgdl=53 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 37.2 is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 37.2,
+            "status": "green",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 37.2°C is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 37.3 is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 37.3,
+            "status": "yellow",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 37.3°C is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEMP-01-tip",
+            "priority": 3,
+            "text": "Rest and re-measure in a couple of hours.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TEMP-01: temperature_c=37.3 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 38.0 is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 38,
+            "status": "red",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 38°C is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEMP-01-tip",
+            "priority": 2,
+            "text": "Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEMP-01: temperature_c=38 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 39.4 is red (upper red edge)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 39.4,
+            "status": "red",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 39.4°C is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEMP-01-tip",
+            "priority": 2,
+            "text": "Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEMP-01: temperature_c=39.4 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 39.5 is critical",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 39.5,
+            "status": "critical",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 39.5°C is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEMP-01-tip",
+            "priority": 1,
+            "text": "Contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "TEMP-01: temperature_c=39.5 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 35.8 is yellow (low)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 35.8,
+            "status": "yellow",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 35.8°C is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEMP-01-tip",
+            "priority": 3,
+            "text": "Rest and re-measure in a couple of hours.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TEMP-01: temperature_c=35.8 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Temp 35.7 is red (low)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 35.7,
+            "status": "red",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 35.7°C is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEMP-01-tip",
+            "priority": 2,
+            "text": "Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEMP-01: temperature_c=35.7 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Sleep 7h is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 7,
+            "status": "green",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 7h is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Sleep 6.9h is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 6.9,
+            "status": "yellow",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 6.9h is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SLP-01-tip",
+            "priority": 3,
+            "text": "Try to protect your sleep window tonight.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Sleep duration after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "SLP-01: sleep_hours=6.9 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Sleep 5h is yellow (lower yellow edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 5,
+            "status": "yellow",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 5h is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SLP-01-tip",
+            "priority": 3,
+            "text": "Try to protect your sleep window tonight.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Sleep duration after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "SLP-01: sleep_hours=5 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Sleep 4.9h is red (just below yellow)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 4.9,
+            "status": "red",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 4.9h is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SLP-01-tip",
+            "priority": 2,
+            "text": "Talk to a crewmate or the flight surgeon about your sleep.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Sleep duration after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "SLP-01: sleep_hours=4.9 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Sleep 9h is green (upper green edge)",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 9,
+            "status": "green",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 9h is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Sleep 9.1h is yellow (just above green)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 9.1,
+            "status": "yellow",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 9.1h is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "SLP-01-tip",
+            "priority": 3,
+            "text": "Try to protect your sleep window tonight.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Sleep duration after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "SLP-01: sleep_hours=9.1 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Mood 4 is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "mood",
+            "value": 4,
+            "status": "green",
+            "ruleId": "MOOD-01",
+            "message": "Mood 4/5 is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Mood 3 is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "mood",
+            "value": 3,
+            "status": "yellow",
+            "ruleId": "MOOD-01",
+            "message": "Mood 3/5 is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "MOOD-01-tip",
+            "priority": 3,
+            "text": "Consider talking to a crewmate today.",
+            "category": "mental"
+          },
+          {
+            "id": "MOOD-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Mood after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "MOOD-01: mood=3 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Mood 2 is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "mood",
+            "value": 2,
+            "status": "red",
+            "ruleId": "MOOD-01",
+            "message": "Mood 2/5 is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "MOOD-01-tip",
+            "priority": 2,
+            "text": "Talk to a crewmate and consider a private call with the flight surgeon/counsellor.",
+            "category": "mental"
+          },
+          {
+            "id": "MOOD-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Mood after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "MOOD-01: mood=2 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Mood 1 is critical",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "mood",
+            "value": 1,
+            "status": "critical",
+            "ruleId": "MOOD-01",
+            "message": "Mood 1/5 is critical."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "MOOD-01-tip",
+            "priority": 1,
+            "text": "Talk to a crewmate now and contact the flight surgeon/counsellor.",
+            "category": "mental"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "MOOD-01: mood=1 -> critical."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Exercise 60min total is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "exercise_minutes",
+            "value": 60,
+            "status": "green",
+            "ruleId": "EXR-01",
+            "message": "Exercise (resistance + cardio) 60min/day is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Exercise 59min total is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "exercise_minutes",
+            "value": 59,
+            "status": "yellow",
+            "ruleId": "EXR-01",
+            "message": "Exercise (resistance + cardio) 59min/day is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "EXR-01-tip",
+            "priority": 3,
+            "text": "Try to fit in more exercise today.",
+            "category": "exercise"
+          },
+          {
+            "id": "EXR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Exercise (resistance + cardio) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "EXR-01: exercise_minutes=59 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Exercise 30min total is yellow (lower yellow edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "exercise_minutes",
+            "value": 30,
+            "status": "yellow",
+            "ruleId": "EXR-01",
+            "message": "Exercise (resistance + cardio) 30min/day is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "EXR-01-tip",
+            "priority": 3,
+            "text": "Try to fit in more exercise today.",
+            "category": "exercise"
+          },
+          {
+            "id": "EXR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Exercise (resistance + cardio) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "EXR-01: exercise_minutes=30 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Exercise 29min total is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "exercise_minutes",
+            "value": 29,
+            "status": "red",
+            "ruleId": "EXR-01",
+            "message": "Exercise (resistance + cardio) 29min/day is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "EXR-01-tip",
+            "priority": 2,
+            "text": "Bone and muscle protection is at risk — prioritise exercise.",
+            "category": "exercise"
+          },
+          {
+            "id": "EXR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Exercise (resistance + cardio) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "EXR-01: exercise_minutes=29 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Water 2000mL is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "water_ml",
+            "value": 2000,
+            "status": "green",
+            "ruleId": "HYD-01",
+            "message": "Hydration / water intake 2000mL/day is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Water 1999mL is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "water_ml",
+            "value": 1999,
+            "status": "yellow",
+            "ruleId": "HYD-01",
+            "message": "Hydration / water intake 1999mL/day is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HYD-01-tip",
+            "priority": 3,
+            "text": "Drink more water today.",
+            "category": "hydration"
+          },
+          {
+            "id": "HYD-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Hydration / water intake after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HYD-01: water_ml=1999 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Water 1500mL is yellow (lower yellow edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "water_ml",
+            "value": 1500,
+            "status": "yellow",
+            "ruleId": "HYD-01",
+            "message": "Hydration / water intake 1500mL/day is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HYD-01-tip",
+            "priority": 3,
+            "text": "Drink more water today.",
+            "category": "hydration"
+          },
+          {
+            "id": "HYD-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Hydration / water intake after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HYD-01: water_ml=1500 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Water 1499mL is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "water_ml",
+            "value": 1499,
+            "status": "red",
+            "ruleId": "HYD-01",
+            "message": "Hydration / water intake 1499mL/day is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HYD-01-tip",
+            "priority": 2,
+            "text": "Drink water/electrolytes now and reassess in 2 hours.",
+            "category": "hydration"
+          },
+          {
+            "id": "HYD-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Hydration / water intake after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HYD-01: water_ml=1499 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Team relations 4 is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "team_relations",
+            "value": 4,
+            "status": "green",
+            "ruleId": "TEAM-01",
+            "message": "Team relations 4/5 is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Team relations 3 is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "team_relations",
+            "value": 3,
+            "status": "yellow",
+            "ruleId": "TEAM-01",
+            "message": "Team relations 3/5 is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEAM-01-tip",
+            "priority": 3,
+            "text": "Keep an eye on crew dynamics.",
+            "category": "mental"
+          },
+          {
+            "id": "TEAM-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Team relations after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TEAM-01: team_relations=3 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Team relations 2 is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "team_relations",
+            "value": 2,
+            "status": "red",
+            "ruleId": "TEAM-01",
+            "message": "Team relations 2/5 is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "TEAM-01-tip",
+            "priority": 2,
+            "text": "Talk to a crewmate/commander; mention it to the surgeon/psychologist if it continues.",
+            "category": "mental"
+          },
+          {
+            "id": "TEAM-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Team relations after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEAM-01: team_relations=2 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Radiation at 80% of daily budget is green",
+      "result": {
+        "overall": "green",
+        "indicators": [
+          {
+            "id": "radiation_dose_pct",
+            "value": 80,
+            "status": "green",
+            "ruleId": "RAD-01",
+            "message": "Radiation dose (% of budget) 80% is green."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Radiation at 90% of daily budget is yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "radiation_dose_pct",
+            "value": 90,
+            "status": "yellow",
+            "ruleId": "RAD-01",
+            "message": "Radiation dose (% of budget) 90% is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "RAD-01-tip",
+            "priority": 3,
+            "text": "Approaching the radiation budget — review shelter/storm procedures.",
+            "category": "medical"
+          },
+          {
+            "id": "RAD-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Radiation dose (% of budget) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "RAD-01: radiation_dose_pct=90 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Radiation at 100% of daily budget is yellow (upper yellow edge)",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "radiation_dose_pct",
+            "value": 100,
+            "status": "yellow",
+            "ruleId": "RAD-01",
+            "message": "Radiation dose (% of budget) 100% is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "RAD-01-tip",
+            "priority": 3,
+            "text": "Approaching the radiation budget — review shelter/storm procedures.",
+            "category": "medical"
+          },
+          {
+            "id": "RAD-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Radiation dose (% of budget) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "RAD-01: radiation_dose_pct=100 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Radiation at 110% of daily budget is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "radiation_dose_pct",
+            "value": 110.00000000000001,
+            "status": "red",
+            "ruleId": "RAD-01",
+            "message": "Radiation dose (% of budget) 110.00000000000001% is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "RAD-01-tip",
+            "priority": 2,
+            "text": "Over the radiation budget — contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "RAD-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Radiation dose (% of budget) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "RAD-01: radiation_dose_pct=110.00000000000001 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-CHEST-01: severe chest pain -> critical emergency",
+      "result": {
+        "overall": "critical",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-CHEST-01",
+            "status": "critical",
+            "message": "Chest pain reported — possible cardiac emergency. Stop activity, sit/secure yourself, contact the flight surgeon now.",
+            "hazard": "gravity",
+            "causedBySymptoms": [
+              "chest_pain"
+            ]
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-CHEST-01-action",
+            "priority": 1,
+            "text": "Chest pain reported — possible cardiac emergency. Stop activity, sit/secure yourself, contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "CMB-CHEST-01: Chest pain reported — possible cardiac emergency. Stop activity, sit/secure yourself, contact the flight surgeon now."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-CO2-01: headache+dizziness with SpO2 yellow -> red, possible CO2 (also triggers CMB-HYPOX-01: same symptoms legitimately satisfy both rules' trigger lists when SpO2 < 95)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 93,
+            "status": "yellow",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 93% is yellow."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-CO2-01",
+            "status": "red",
+            "message": "Possible high CO2 / air quality problem. Check the cabin CO2 monitor, move to a different module, alert the crew.",
+            "hazard": "closed_environment"
+          },
+          {
+            "id": "CMB-HYPOX-01",
+            "status": "red",
+            "message": "Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-CO2-01-action",
+            "priority": 2,
+            "text": "Possible high CO2 / air quality problem. Check the cabin CO2 monitor, move to a different module, alert the crew.",
+            "category": "environment"
+          },
+          {
+            "id": "CMB-HYPOX-01-action",
+            "priority": 2,
+            "text": "Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-tip",
+            "priority": 3,
+            "text": "Re-check cabin air and re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Blood oxygen (SpO2) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "SPO2-01: spo2=93 -> yellow.",
+          "CMB-CO2-01: Possible high CO2 / air quality problem. Check the cabin CO2 monitor, move to a different module, alert the crew.",
+          "CMB-HYPOX-01: Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-INF-01: fever + fever_chills -> red, possible infection",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 38,
+            "status": "red",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 38°C is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-INF-01",
+            "status": "red",
+            "message": "Possible infection. Isolate, hydrate, and contact the flight surgeon.",
+            "hazard": "radiation"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-INF-01-action",
+            "priority": 2,
+            "text": "Possible infection. Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-tip",
+            "priority": 2,
+            "text": "Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEMP-01: temperature_c=38 -> red.",
+          "CMB-INF-01: Possible infection. Isolate, hydrate, and contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-CV-01: HR red + dizziness -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 120,
+            "status": "red",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 120bpm is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-CV-01",
+            "status": "red",
+            "message": "Elevated heart rate with dizziness/palpitations. Sit/rest, repeat the measurement after 10 minutes, contact the flight surgeon.",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-CV-01-action",
+            "priority": 2,
+            "text": "Elevated heart rate with dizziness/palpitations. Sit/rest, repeat the measurement after 10 minutes, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-tip",
+            "priority": 2,
+            "text": "Sit down, rest, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HR-01: heart_rate=120 -> red.",
+          "CMB-CV-01: Elevated heart rate with dizziness/palpitations. Sit/rest, repeat the measurement after 10 minutes, contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-HYP-01: BP red (worst-of-two) + headache -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "bp_systolic",
+            "value": 150,
+            "status": "red",
+            "ruleId": "BP-SYS-01",
+            "message": "Blood pressure (systolic) 150mmHg is red."
+          },
+          {
+            "id": "bp_diastolic",
+            "value": 70,
+            "status": "green",
+            "ruleId": "BP-DIA-01",
+            "message": "Blood pressure (diastolic) 70mmHg is green."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-HYP-01",
+            "status": "red",
+            "message": "High blood pressure with headache/vision changes. Contact the flight surgeon (possible severe hypertension).",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-HYP-01-action",
+            "priority": 2,
+            "text": "High blood pressure with headache/vision changes. Contact the flight surgeon (possible severe hypertension).",
+            "category": "medical"
+          },
+          {
+            "id": "BP-SYS-01-tip",
+            "priority": 2,
+            "text": "Sit/rest and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "BP-SYS-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Blood pressure (systolic) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "BP-SYS-01: bp_systolic=150 -> red.",
+          "CMB-HYP-01: High blood pressure with headache/vision changes. Contact the flight surgeon (possible severe hypertension)."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-VIS-01: vision change today only -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-VIS-01",
+            "status": "yellow",
+            "message": "Vision change/eye pain reported. Log it and do a vision self-test (SANS watch).",
+            "hazard": "gravity",
+            "causedBySymptoms": [
+              "vision_changes"
+            ]
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-VIS-01-action",
+            "priority": 3,
+            "text": "Vision change/eye pain reported. Log it and do a vision self-test (SANS watch).",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "CMB-VIS-01: Vision change/eye pain reported. Log it and do a vision self-test (SANS watch)."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-VIS-01: vision change persists 2 days -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-VIS-01",
+            "status": "red",
+            "message": "Vision change/eye pain persisting 2+ days — SANS watch. Report to the flight surgeon.",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-VIS-01-action",
+            "priority": 2,
+            "text": "Vision change/eye pain persisting 2+ days — SANS watch. Report to the flight surgeon.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "CMB-VIS-01: Vision change/eye pain persisting 2+ days — SANS watch. Report to the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-DEHY-01: low hydration + fatigue -> flag yellow, but water_ml red drives overall red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "water_ml",
+            "value": 1400,
+            "status": "red",
+            "ruleId": "HYD-01",
+            "message": "Hydration / water intake 1400mL/day is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-DEHY-01",
+            "status": "yellow",
+            "message": "Low hydration with dizziness/fatigue. Drink water/electrolytes, reassess in 2 hours.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HYD-01-tip",
+            "priority": 2,
+            "text": "Drink water/electrolytes now and reassess in 2 hours.",
+            "category": "hydration"
+          },
+          {
+            "id": "HYD-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Hydration / water intake after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "CMB-DEHY-01-action",
+            "priority": 3,
+            "text": "Low hydration with dizziness/fatigue. Drink water/electrolytes, reassess in 2 hours.",
+            "category": "hydration"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HYD-01: water_ml=1400 -> red.",
+          "CMB-DEHY-01: Low hydration with dizziness/fatigue. Drink water/electrolytes, reassess in 2 hours."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-GLU-01: glucose red + nausea -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 200,
+            "status": "red",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 200mg/dL is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-GLU-01",
+            "status": "red",
+            "message": "High glucose with nausea/abdominal pain. Contact the flight surgeon.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-GLU-01-action",
+            "priority": 2,
+            "text": "High glucose with nausea/abdominal pain. Contact the flight surgeon.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-tip",
+            "priority": 2,
+            "text": "Contact the flight surgeon.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Fasting blood glucose after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "GLU-01: glucose_mgdl=200 -> red.",
+          "CMB-GLU-01: High glucose with nausea/abdominal pain. Contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-HYPO-01: glucose <70 + dizziness -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "glucose_mgdl",
+            "value": 65,
+            "status": "red",
+            "ruleId": "GLU-01",
+            "message": "Fasting blood glucose 65mg/dL is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-HYPO-01",
+            "status": "red",
+            "message": "Low glucose with dizziness/fatigue. Take a fast-acting carbohydrate, recheck in 15 minutes.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-HYPO-01-action",
+            "priority": 2,
+            "text": "Low glucose with dizziness/fatigue. Take a fast-acting carbohydrate, recheck in 15 minutes.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-tip",
+            "priority": 2,
+            "text": "Contact the flight surgeon.",
+            "category": "nutrition"
+          },
+          {
+            "id": "GLU-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Fasting blood glucose after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "GLU-01: glucose_mgdl=65 -> red.",
+          "CMB-HYPO-01: Low glucose with dizziness/fatigue. Take a fast-acting carbohydrate, recheck in 15 minutes."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAM-01: nausea+dizziness in first 3 mission days -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-SAM-01",
+            "status": "yellow",
+            "message": "Space adaptation syndrome likely. Move your head slowly, hydrate, rest.",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-SAM-01-action",
+            "priority": 3,
+            "text": "Space adaptation syndrome likely. Move your head slowly, hydrate, rest.",
+            "category": "rest"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "CMB-SAM-01: Space adaptation syndrome likely. Move your head slowly, hydrate, rest."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAM-01 does NOT fire after mission day 3",
+      "result": {
+        "overall": "green",
+        "indicators": [],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-MENT-01: low mood + low_mood symptom -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "mood",
+            "value": 2,
+            "status": "red",
+            "ruleId": "MOOD-01",
+            "message": "Mood 2/5 is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-MENT-01",
+            "status": "red",
+            "message": "Low mood with low mood/anxiety/insomnia symptoms. Talk to a crewmate; schedule a private call with the counsellor.",
+            "hazard": "isolation"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-MENT-01-action",
+            "priority": 2,
+            "text": "Low mood with low mood/anxiety/insomnia symptoms. Talk to a crewmate; schedule a private call with the counsellor.",
+            "category": "mental"
+          },
+          {
+            "id": "MOOD-01-tip",
+            "priority": 2,
+            "text": "Talk to a crewmate and consider a private call with the flight surgeon/counsellor.",
+            "category": "mental"
+          },
+          {
+            "id": "MOOD-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Mood after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "MOOD-01: mood=2 -> red.",
+          "CMB-MENT-01: Low mood with low mood/anxiety/insomnia symptoms. Talk to a crewmate; schedule a private call with the counsellor."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAFETY-01: self-harm flag -> critical emergency, always wins",
+      "result": {
+        "overall": "critical",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-SAFETY-01",
+            "status": "critical",
+            "message": "You indicated thoughts of harming yourself. Reach out for immediate human support and contact the flight surgeon now.",
+            "hazard": "isolation"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-SAFETY-01-action",
+            "priority": 1,
+            "text": "You indicated thoughts of harming yourself. Reach out for immediate human support and contact the flight surgeon now.",
+            "category": "mental"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "CMB-SAFETY-01: You indicated thoughts of harming yourself. Reach out for immediate human support and contact the flight surgeon now."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-BACK-01: back pain (moderate+) for 3 consecutive days -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-BACK-01",
+            "status": "yellow",
+            "message": "Back pain (moderate+) for 3+ consecutive days. Adjust posture/exercise and report it.",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-BACK-01-action",
+            "priority": 3,
+            "text": "Back pain (moderate+) for 3+ consecutive days. Adjust posture/exercise and report it.",
+            "category": "exercise"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "CMB-BACK-01: Back pain (moderate+) for 3+ consecutive days. Adjust posture/exercise and report it."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-BACK-01 does NOT fire without 2 prior consecutive days",
+      "result": {
+        "overall": "green",
+        "indicators": [],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-HYPOX-01: SpO2 90 + headache -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 90,
+            "status": "red",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 90% is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-HYPOX-01",
+            "status": "red",
+            "message": "Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-HYPOX-01-action",
+            "priority": 2,
+            "text": "Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-tip",
+            "priority": 2,
+            "text": "Sit down, check cabin/suit O2, alert crew, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Blood oxygen (SpO2) after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "SPO2-01: spo2=90 -> red.",
+          "CMB-HYPOX-01: Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-HYPOX-01: SpO2 85 + shortness of breath -> critical",
+      "result": {
+        "overall": "critical",
+        "indicators": [
+          {
+            "id": "spo2",
+            "value": 85,
+            "status": "critical",
+            "ruleId": "SPO2-01",
+            "message": "Blood oxygen (SpO2) 85% is critical."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-HYPOX-01",
+            "status": "critical",
+            "message": "Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-HYPOX-01-action",
+            "priority": 1,
+            "text": "Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "SPO2-01-tip",
+            "priority": 1,
+            "text": "Sit down, alert crew, and contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "SPO2-01: spo2=85 -> critical.",
+          "CMB-HYPOX-01: Possible low oxygen. Sit down, check cabin/suit O2 and CO2 readings per mission procedure, alert crew, contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-DCS-01: EVA today + joint pain -> red",
+      "result": {
+        "overall": "red",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-DCS-01",
+            "status": "red",
+            "message": "Possible decompression sickness after a spacewalk. Stop activity, alert crew, contact the flight surgeon now.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-DCS-01-action",
+            "priority": 2,
+            "text": "Possible decompression sickness after a spacewalk. Stop activity, alert crew, contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "CMB-DCS-01: Possible decompression sickness after a spacewalk. Stop activity, alert crew, contact the flight surgeon now."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-DCS-01: EVA today + shortness of breath -> critical",
+      "result": {
+        "overall": "critical",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-DCS-01",
+            "status": "critical",
+            "message": "Possible decompression sickness after a spacewalk. Stop activity, alert crew, contact the flight surgeon now.",
+            "hazard": "closed_environment"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-DCS-01-action",
+            "priority": 1,
+            "text": "Possible decompression sickness after a spacewalk. Stop activity, alert crew, contact the flight surgeon now.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "CMB-DCS-01: Possible decompression sickness after a spacewalk. Stop activity, alert crew, contact the flight surgeon now."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-DCS-01 does NOT fire without a recent EVA",
+      "result": {
+        "overall": "green",
+        "indicators": [],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-IMM-01: rash without fever -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-IMM-01",
+            "status": "yellow",
+            "message": "Skin/immune change (stress can reactivate dormant viruses). Log it, keep the area clean, report if spreading or lasting 2 days.",
+            "hazard": "radiation",
+            "causedBySymptoms": [
+              "rash_skin_irritation"
+            ]
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-IMM-01-action",
+            "priority": 3,
+            "text": "Skin/immune change (stress can reactivate dormant viruses). Log it, keep the area clean, report if spreading or lasting 2 days.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "CMB-IMM-01: Skin/immune change (stress can reactivate dormant viruses). Log it, keep the area clean, report if spreading or lasting 2 days."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-IMM-01 does NOT fire when fever is present; CMB-INF-01 applies instead",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "temperature_c",
+            "value": 38.2,
+            "status": "red",
+            "ruleId": "TEMP-01",
+            "message": "Body temperature 38.2°C is red."
+          }
+        ],
+        "flags": [
+          {
+            "id": "CMB-INF-01",
+            "status": "red",
+            "message": "Possible infection. Isolate, hydrate, and contact the flight surgeon.",
+            "hazard": "radiation"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-INF-01-action",
+            "priority": 2,
+            "text": "Possible infection. Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-tip",
+            "priority": 2,
+            "text": "Isolate, hydrate, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "TEMP-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Body temperature after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEMP-01: temperature_c=38.2 -> red.",
+          "CMB-INF-01: Possible infection. Isolate, hydrate, and contact the flight surgeon."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-SLP-01: sleep < 6h for 3 days in a row -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 5.5,
+            "status": "yellow",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 5.5h is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-SLP-01",
+            "status": "yellow",
+            "message": "Sleep debt building: under 6 hours for 3 days in a row.",
+            "windowDays": 3
+          }
+        ],
+        "actions": [
+          {
+            "id": "SLP-01-tip",
+            "priority": 3,
+            "text": "Try to protect your sleep window tonight.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Sleep duration after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "TRD-SLP-01-action",
+            "priority": 3,
+            "text": "Sleep debt building: under 6 hours for 3 days in a row.",
+            "category": "rest"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "SLP-01: sleep_hours=5.5 -> yellow.",
+          "TRD-SLP-01: Sleep debt building: under 6 hours for 3 days in a row."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-SLP-02: sleep < 6h for 5+ of last 7 days -> red (also triggers TRD-SLP-01)",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "sleep_hours",
+            "value": 5,
+            "status": "yellow",
+            "ruleId": "SLP-01",
+            "message": "Sleep duration 5h is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-SLP-01",
+            "status": "yellow",
+            "message": "Sleep debt building: under 6 hours for 3 days in a row.",
+            "windowDays": 3
+          },
+          {
+            "id": "TRD-SLP-02",
+            "status": "red",
+            "message": "Chronic sleep loss: under 6 hours on 5+ of the last 7 days.",
+            "windowDays": 7
+          }
+        ],
+        "actions": [
+          {
+            "id": "TRD-SLP-02-action",
+            "priority": 2,
+            "text": "Chronic sleep loss: under 6 hours on 5+ of the last 7 days.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-tip",
+            "priority": 3,
+            "text": "Try to protect your sleep window tonight.",
+            "category": "rest"
+          },
+          {
+            "id": "SLP-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Sleep duration after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "TRD-SLP-01-action",
+            "priority": 3,
+            "text": "Sleep debt building: under 6 hours for 3 days in a row.",
+            "category": "rest"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "SLP-01: sleep_hours=5 -> yellow.",
+          "TRD-SLP-01: Sleep debt building: under 6 hours for 3 days in a row.",
+          "TRD-SLP-02: Chronic sleep loss: under 6 hours on 5+ of the last 7 days."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-MOOD-01: 5-day average mood <= 2.5 -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "mood",
+            "value": 3,
+            "status": "yellow",
+            "ruleId": "MOOD-01",
+            "message": "Mood 3/5 is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-MOOD-01",
+            "status": "yellow",
+            "message": "5-day average mood is low.",
+            "windowDays": 5
+          }
+        ],
+        "actions": [
+          {
+            "id": "MOOD-01-tip",
+            "priority": 3,
+            "text": "Consider talking to a crewmate today.",
+            "category": "mental"
+          },
+          {
+            "id": "MOOD-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Mood after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "TRD-MOOD-01-action",
+            "priority": 3,
+            "text": "5-day average mood is low.",
+            "category": "mental"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "MOOD-01: mood=3 -> yellow.",
+          "TRD-MOOD-01: 5-day average mood is low."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-BP-01: 5-day average systolic >= 135 -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "bp_systolic",
+            "value": 130,
+            "status": "yellow",
+            "ruleId": "BP-SYS-01",
+            "message": "Blood pressure (systolic) 130mmHg is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-BP-01",
+            "status": "yellow",
+            "message": "5-day average systolic blood pressure is elevated. Review sodium/exercise and your measurement schedule.",
+            "windowDays": 5
+          }
+        ],
+        "actions": [
+          {
+            "id": "BP-SYS-01-tip",
+            "priority": 3,
+            "text": "Rest for 10-15 minutes, then re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "BP-SYS-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Blood pressure (systolic) after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "TRD-BP-01-action",
+            "priority": 3,
+            "text": "5-day average systolic blood pressure is elevated. Review sodium/exercise and your measurement schedule.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "BP-SYS-01: bp_systolic=130 -> yellow.",
+          "TRD-BP-01: 5-day average systolic blood pressure is elevated. Review sodium/exercise and your measurement schedule."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-HR-01: HR 15+ above 14-day baseline for 3 days -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 90,
+            "status": "green",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 90bpm is green."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-HR-01",
+            "status": "yellow",
+            "message": "Resting heart rate has been 15+ bpm above your 14-day baseline for 3 days.",
+            "windowDays": 3
+          }
+        ],
+        "actions": [
+          {
+            "id": "TRD-HR-01-action",
+            "priority": 3,
+            "text": "Resting heart rate has been 15+ bpm above your 14-day baseline for 3 days.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TRD-HR-01: Resting heart rate has been 15+ bpm above your 14-day baseline for 3 days."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-EXR-01: under 30min exercise for 3 days -> trend yellow, today's own band is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "exercise_minutes",
+            "value": 20,
+            "status": "red",
+            "ruleId": "EXR-01",
+            "message": "Exercise (resistance + cardio) 20min/day is red."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-EXR-01",
+            "status": "yellow",
+            "message": "Bone and muscle protection at risk: under 30 minutes of exercise for 3 days in a row.",
+            "windowDays": 3
+          }
+        ],
+        "actions": [
+          {
+            "id": "EXR-01-tip",
+            "priority": 2,
+            "text": "Bone and muscle protection is at risk — prioritise exercise.",
+            "category": "exercise"
+          },
+          {
+            "id": "EXR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Exercise (resistance + cardio) after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "TRD-EXR-01-action",
+            "priority": 3,
+            "text": "Bone and muscle protection at risk: under 30 minutes of exercise for 3 days in a row.",
+            "category": "exercise"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "EXR-01: exercise_minutes=20 -> red.",
+          "TRD-EXR-01: Bone and muscle protection at risk: under 30 minutes of exercise for 3 days in a row."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-WGT-01: weight loss > 3% in 14 days -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-WGT-01",
+            "status": "yellow",
+            "message": "Weight loss over 3% in the last 14 days. Nutrition check recommended.",
+            "windowDays": 14
+          }
+        ],
+        "actions": [
+          {
+            "id": "TRD-WGT-01-action",
+            "priority": 3,
+            "text": "Weight loss over 3% in the last 14 days. Nutrition check recommended.",
+            "category": "nutrition"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TRD-WGT-01: Weight loss over 3% in the last 14 days. Nutrition check recommended."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-RAD-01: cumulative radiation projected over mission budget -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-RAD-01",
+            "status": "yellow",
+            "message": "Cumulative radiation is projected to exceed the mission budget.",
+            "windowDays": 90
+          }
+        ],
+        "actions": [
+          {
+            "id": "TRD-RAD-01-action",
+            "priority": 3,
+            "text": "Cumulative radiation is projected to exceed the mission budget.",
+            "category": "medical"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TRD-RAD-01: Cumulative radiation is projected to exceed the mission budget."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-MISS-01: 2-day gap since last log -> yellow reminder",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-MISS-01",
+            "status": "yellow",
+            "message": "Missed check-ins: 2 days with no log before this one.",
+            "windowDays": 2
+          }
+        ],
+        "actions": [
+          {
+            "id": "TRD-MISS-01-action",
+            "priority": 3,
+            "text": "Missed check-ins: 2 days with no log before this one.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "TRD-MISS-01: Missed check-ins: 2 days with no log before this one."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-MISS-01: 5-day gap since last log -> red, surgeon-view alert",
+      "result": {
+        "overall": "red",
+        "indicators": [],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-MISS-01",
+            "status": "red",
+            "message": "No check-in for 5 days — flagged on the surgeon view.",
+            "windowDays": 5
+          }
+        ],
+        "actions": [
+          {
+            "id": "TRD-MISS-01-action",
+            "priority": 2,
+            "text": "No check-in for 5 days — flagged on the surgeon view.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TRD-MISS-01: No check-in for 5 days — flagged on the surgeon view."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "TRD-TEAM-01: team_relations <= 2 for 3 consecutive days -> trend yellow, today's own band is red",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "team_relations",
+            "value": 2,
+            "status": "red",
+            "ruleId": "TEAM-01",
+            "message": "Team relations 2/5 is red."
+          }
+        ],
+        "flags": [],
+        "trends": [
+          {
+            "id": "TRD-TEAM-01",
+            "status": "yellow",
+            "message": "Team tension building. Talk to a crewmate/commander and mention it to the surgeon/psychologist.",
+            "windowDays": 3
+          }
+        ],
+        "actions": [
+          {
+            "id": "TEAM-01-tip",
+            "priority": 2,
+            "text": "Talk to a crewmate/commander; mention it to the surgeon/psychologist if it continues.",
+            "category": "mental"
+          },
+          {
+            "id": "TEAM-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Team relations after resting 10-15 minutes.",
+            "category": "measure"
+          },
+          {
+            "id": "TRD-TEAM-01-action",
+            "priority": 3,
+            "text": "Team tension building. Talk to a crewmate/commander and mention it to the surgeon/psychologist.",
+            "category": "mental"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "TEAM-01: team_relations=2 -> red.",
+          "TRD-TEAM-01: Team tension building. Talk to a crewmate/commander and mention it to the surgeon/psychologist."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Escalation: nothing entered -> none",
+      "result": {
+        "overall": "green",
+        "indicators": [],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Escalation: single yellow indicator -> self_care",
+      "result": {
+        "overall": "yellow",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 105,
+            "status": "yellow",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 105bpm is yellow."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 3,
+            "text": "Rest for 10-15 minutes, then re-measure.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 3,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "HR-01: heart_rate=105 -> yellow."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Escalation: single red indicator -> contact_surgeon",
+      "result": {
+        "overall": "red",
+        "indicators": [
+          {
+            "id": "heart_rate",
+            "value": 120,
+            "status": "red",
+            "ruleId": "HR-01",
+            "message": "Resting heart rate 120bpm is red."
+          }
+        ],
+        "flags": [],
+        "trends": [],
+        "actions": [
+          {
+            "id": "HR-01-tip",
+            "priority": 2,
+            "text": "Sit down, rest, and contact the flight surgeon.",
+            "category": "medical"
+          },
+          {
+            "id": "HR-01-remeasure",
+            "priority": 2,
+            "text": "Re-check Resting heart rate after resting 10-15 minutes.",
+            "category": "measure"
+          }
+        ],
+        "escalation": {
+          "level": "contact_surgeon",
+          "text": "Contact the flight surgeon. Share your last 3 values and today's symptoms. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: red.",
+          "HR-01: heart_rate=120 -> red."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "Escalation: CMB-SAFETY-01 -> emergency",
+      "result": {
+        "overall": "critical",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-SAFETY-01",
+            "status": "critical",
+            "message": "You indicated thoughts of harming yourself. Reach out for immediate human support and contact the flight surgeon now.",
+            "hazard": "isolation"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-SAFETY-01-action",
+            "priority": 1,
+            "text": "You indicated thoughts of harming yourself. Reach out for immediate human support and contact the flight surgeon now.",
+            "category": "mental"
+          }
+        ],
+        "escalation": {
+          "level": "emergency",
+          "text": "Emergency: stop activity, secure yourself, alert the crew, and contact the flight surgeon now. See the onboard medical kit (check your mission formulary) for general supportive care."
+        },
+        "explanation": [
+          "Overall status: critical.",
+          "CMB-SAFETY-01: You indicated thoughts of harming yourself. Reach out for immediate human support and contact the flight surgeon now."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAM-01: nausea+dizziness on day 1 after a gravity change (late mission) -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-SAM-01",
+            "status": "yellow",
+            "message": "Space adaptation syndrome likely. Move your head slowly, hydrate, rest.",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-SAM-01-action",
+            "priority": 3,
+            "text": "Space adaptation syndrome likely. Move your head slowly, hydrate, rest.",
+            "category": "rest"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "CMB-SAM-01: Space adaptation syndrome likely. Move your head slowly, hydrate, rest."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAM-01: nausea+dizziness on day 3 after a gravity change -> yellow",
+      "result": {
+        "overall": "yellow",
+        "indicators": [],
+        "flags": [
+          {
+            "id": "CMB-SAM-01",
+            "status": "yellow",
+            "message": "Space adaptation syndrome likely. Move your head slowly, hydrate, rest.",
+            "hazard": "gravity"
+          }
+        ],
+        "trends": [],
+        "actions": [
+          {
+            "id": "CMB-SAM-01-action",
+            "priority": 3,
+            "text": "Space adaptation syndrome likely. Move your head slowly, hydrate, rest.",
+            "category": "rest"
+          }
+        ],
+        "escalation": {
+          "level": "self_care",
+          "text": "Self-care: follow today's actions above and re-measure anything borderline."
+        },
+        "explanation": [
+          "Overall status: yellow.",
+          "CMB-SAM-01: Space adaptation syndrome likely. Move your head slowly, hydrate, rest."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAM-01 does NOT fire on day 4 after a gravity change",
+      "result": {
+        "overall": "green",
+        "indicators": [],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    },
+    {
+      "name": "CMB-SAM-01 does NOT fire late in a mission with no gravity change (rover)",
+      "result": {
+        "overall": "green",
+        "indicators": [],
+        "flags": [],
+        "trends": [],
+        "actions": [],
+        "escalation": {
+          "level": "none",
+          "text": "No escalation needed today."
+        },
+        "explanation": [
+          "Overall status: green."
+        ],
+        "rulesVersion": "1.1.0"
+      }
+    }
+  ]
+}

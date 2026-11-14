@@ -1,0 +1,2829 @@
+{
+  "rulesVersion": "1.1.0",
+  "vectors": [
+    {
+      "name": "HR 50 is green (lower green edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 50
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 49 is yellow (just below green)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 49
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 40 is yellow (lower yellow edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 40
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 39 is red (just below yellow-low)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 39
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 100 is green (upper green edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 100
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 101 is yellow (just above green)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 101
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 110 is yellow (upper yellow-high edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 110
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 111 is red (just above yellow-high)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 111
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 130 is red (upper red edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 130
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "HR 131 is critical (just above red)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 131
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "heart_rate": "critical"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "SpO2 95 is green (lower green edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 95
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "spo2": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "SpO2 94 is yellow (just below green)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 94
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "spo2": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "SpO2 92 is yellow (lower yellow edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 92
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "spo2": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "SpO2 91 is red (just below yellow)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 91
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "spo2": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "SpO2 88 is red (lower red edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 88
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "spo2": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "SpO2 87 is critical (just below red)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 87
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "spo2": "critical"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "BP worst-of-two: systolic red, diastolic green -> overall red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "bp_systolic": 145,
+          "bp_diastolic": 70
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "bp_systolic": "red",
+          "bp_diastolic": "green"
+        },
+        "overall": "red",
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "BP worst-of-two: diastolic critical, systolic green -> overall critical",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "bp_systolic": 110,
+          "bp_diastolic": 125
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "bp_systolic": "green",
+          "bp_diastolic": "critical"
+        },
+        "overall": "critical",
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 99 is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 99
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 100 is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 100
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 126 is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 126
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 250 is red (upper red edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 250
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 251 is critical",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 251
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "critical"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 69 is red (low)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 69
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Glucose 53 is critical (low)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 53
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "glucose_mgdl": "critical"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 37.2 is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 37.2
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 37.3 is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 37.3
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 38.0 is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 38
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 39.4 is red (upper red edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 39.4
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 39.5 is critical",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 39.5
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "critical"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 35.8 is yellow (low)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 35.8
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Temp 35.7 is red (low)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 35.7
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "temperature_c": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Sleep 7h is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 7
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "sleep_hours": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Sleep 6.9h is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 6.9
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "sleep_hours": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Sleep 5h is yellow (lower yellow edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 5
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "sleep_hours": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Sleep 4.9h is red (just below yellow)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 4.9
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "sleep_hours": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Sleep 9h is green (upper green edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 9
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "sleep_hours": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Sleep 9.1h is yellow (just above green)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 9.1
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "sleep_hours": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Mood 4 is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "mood": 4
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "mood": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Mood 3 is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "mood": 3
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "mood": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Mood 2 is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "mood": 2
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "mood": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Mood 1 is critical",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "mood": 1
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "mood": "critical"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Exercise 60min total is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "exercise_resistance_min": 40,
+          "exercise_cardio_min": 20
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "exercise_minutes": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Exercise 59min total is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "exercise_resistance_min": 30,
+          "exercise_cardio_min": 29
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "exercise_minutes": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Exercise 30min total is yellow (lower yellow edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "exercise_resistance_min": 15,
+          "exercise_cardio_min": 15
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "exercise_minutes": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Exercise 29min total is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "exercise_resistance_min": 15,
+          "exercise_cardio_min": 14
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "exercise_minutes": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Water 2000mL is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "water_ml": 2000
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "water_ml": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Water 1999mL is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "water_ml": 1999
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "water_ml": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Water 1500mL is yellow (lower yellow edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "water_ml": 1500
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "water_ml": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Water 1499mL is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "water_ml": 1499
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "water_ml": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Team relations 4 is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "team_relations": 4
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "team_relations": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Team relations 3 is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "team_relations": 3
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "team_relations": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Team relations 2 is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "team_relations": 2
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "team_relations": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Radiation at 80% of daily budget is green",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "radiation_msv": 0.8
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30,
+          "radiationDailyBudgetMsv": 1
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "radiation_dose_pct": "green"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Radiation at 90% of daily budget is yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "radiation_msv": 0.9
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30,
+          "radiationDailyBudgetMsv": 1
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "radiation_dose_pct": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Radiation at 100% of daily budget is yellow (upper yellow edge)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "radiation_msv": 1
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30,
+          "radiationDailyBudgetMsv": 1
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "radiation_dose_pct": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "Radiation at 110% of daily budget is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "radiation_msv": 1.1
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30,
+          "radiationDailyBudgetMsv": 1
+        }
+      },
+      "expect": {
+        "indicatorStatuses": {
+          "radiation_dose_pct": "red"
+        },
+        "flagIds": [],
+        "trendIds": []
+      }
+    },
+    {
+      "name": "CMB-CHEST-01: severe chest pain -> critical emergency",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "chest_pain",
+            "severity": 2
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "critical",
+        "flagIds": ["CMB-CHEST-01"],
+        "trendIds": [],
+        "escalationLevel": "emergency"
+      }
+    },
+    {
+      "name": "CMB-CO2-01: headache+dizziness with SpO2 yellow -> red, possible CO2 (also triggers CMB-HYPOX-01: same symptoms legitimately satisfy both rules' trigger lists when SpO2 < 95)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 93
+        },
+        "symptoms": [
+          {
+            "symptom": "headache",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "spo2": "yellow"
+        },
+        "flagIds": ["CMB-CO2-01", "CMB-HYPOX-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-INF-01: fever + fever_chills -> red, possible infection",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 38
+        },
+        "symptoms": [
+          {
+            "symptom": "fever_chills",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "temperature_c": "red"
+        },
+        "flagIds": ["CMB-INF-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-CV-01: HR red + dizziness -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 120
+        },
+        "symptoms": [
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "heart_rate": "red"
+        },
+        "flagIds": ["CMB-CV-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-HYP-01: BP red (worst-of-two) + headache -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "bp_systolic": 150,
+          "bp_diastolic": 70
+        },
+        "symptoms": [
+          {
+            "symptom": "headache",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "bp_systolic": "red",
+          "bp_diastolic": "green"
+        },
+        "flagIds": ["CMB-HYP-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-VIS-01: vision change today only -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "vision_changes",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": ["CMB-VIS-01"],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "CMB-VIS-01: vision change persists 2 days -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "vision_changes",
+            "severity": 1
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14"
+            },
+            "symptoms": [
+              {
+                "symptom": "vision_changes",
+                "severity": 1
+              }
+            ]
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "flagIds": ["CMB-VIS-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-DEHY-01: low hydration + fatigue -> flag yellow, but water_ml red drives overall red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "water_ml": 1400
+        },
+        "symptoms": [
+          {
+            "symptom": "fatigue",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "water_ml": "red"
+        },
+        "flagIds": ["CMB-DEHY-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-GLU-01: glucose red + nausea -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 200
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "glucose_mgdl": "red"
+        },
+        "flagIds": ["CMB-GLU-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-HYPO-01: glucose <70 + dizziness -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "glucose_mgdl": 65
+        },
+        "symptoms": [
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "glucose_mgdl": "red"
+        },
+        "flagIds": ["CMB-HYPO-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-SAM-01: nausea+dizziness in first 3 mission days -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 2
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": ["CMB-SAM-01"],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "CMB-SAM-01 does NOT fire after mission day 3",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 4
+        }
+      },
+      "expect": {
+        "overall": "green",
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "none"
+      }
+    },
+    {
+      "name": "CMB-MENT-01: low mood + low_mood symptom -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "mood": 2
+        },
+        "symptoms": [
+          {
+            "symptom": "low_mood",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "mood": "red"
+        },
+        "flagIds": ["CMB-MENT-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-SAFETY-01: self-harm flag -> critical emergency, always wins",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "selfHarmThoughts": true
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "critical",
+        "flagIds": ["CMB-SAFETY-01"],
+        "trendIds": [],
+        "escalationLevel": "emergency"
+      }
+    },
+    {
+      "name": "CMB-BACK-01: back pain (moderate+) for 3 consecutive days -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "back_pain",
+            "severity": 2
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14"
+            },
+            "symptoms": [
+              {
+                "symptom": "back_pain",
+                "severity": 2
+              }
+            ]
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13"
+            },
+            "symptoms": [
+              {
+                "symptom": "back_pain",
+                "severity": 2
+              }
+            ]
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": ["CMB-BACK-01"],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "CMB-BACK-01 does NOT fire without 2 prior consecutive days",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "back_pain",
+            "severity": 2
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14"
+            },
+            "symptoms": [
+              {
+                "symptom": "back_pain",
+                "severity": 2
+              }
+            ]
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "green",
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "none"
+      }
+    },
+    {
+      "name": "CMB-HYPOX-01: SpO2 90 + headache -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 90
+        },
+        "symptoms": [
+          {
+            "symptom": "headache",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "spo2": "red"
+        },
+        "flagIds": ["CMB-HYPOX-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-HYPOX-01: SpO2 85 + shortness of breath -> critical",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "spo2": 85
+        },
+        "symptoms": [
+          {
+            "symptom": "shortness_of_breath",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "critical",
+        "indicatorStatuses": {
+          "spo2": "critical"
+        },
+        "flagIds": ["CMB-HYPOX-01"],
+        "trendIds": [],
+        "escalationLevel": "emergency"
+      }
+    },
+    {
+      "name": "CMB-DCS-01: EVA today + joint pain -> red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "eva_today": true
+        },
+        "symptoms": [
+          {
+            "symptom": "joint_pain",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "flagIds": ["CMB-DCS-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "CMB-DCS-01: EVA today + shortness of breath -> critical",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "eva_today": true
+        },
+        "symptoms": [
+          {
+            "symptom": "shortness_of_breath",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "critical",
+        "flagIds": ["CMB-DCS-01"],
+        "trendIds": [],
+        "escalationLevel": "emergency"
+      }
+    },
+    {
+      "name": "CMB-DCS-01 does NOT fire without a recent EVA",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "eva_today": false
+        },
+        "symptoms": [
+          {
+            "symptom": "joint_pain",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "green",
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "none"
+      }
+    },
+    {
+      "name": "CMB-IMM-01: rash without fever -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "rash_skin_irritation",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": ["CMB-IMM-01"],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "CMB-IMM-01 does NOT fire when fever is present; CMB-INF-01 applies instead",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "temperature_c": 38.2
+        },
+        "symptoms": [
+          {
+            "symptom": "rash_skin_irritation",
+            "severity": 1
+          },
+          {
+            "symptom": "fever_chills",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "temperature_c": "red"
+        },
+        "flagIds": ["CMB-INF-01"],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "TRD-SLP-01: sleep < 6h for 3 days in a row -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 5.5
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "sleep_hours": 5.8
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": [],
+        "trendIds": ["TRD-SLP-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-SLP-02: sleep < 6h for 5+ of last 7 days -> red (also triggers TRD-SLP-01)",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "sleep_hours": 5
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-12",
+            "log": {
+              "date": "2026-06-12",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-11",
+            "log": {
+              "date": "2026-06-11",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-10",
+            "log": {
+              "date": "2026-06-10",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-09",
+            "log": {
+              "date": "2026-06-09",
+              "sleep_hours": 5
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "flagIds": [],
+        "trendIds": ["TRD-SLP-01", "TRD-SLP-02"],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "TRD-MOOD-01: 5-day average mood <= 2.5 -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "mood": 3
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "mood": 2
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "mood": 2
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-12",
+            "log": {
+              "date": "2026-06-12",
+              "mood": 2
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-11",
+            "log": {
+              "date": "2026-06-11",
+              "mood": 2
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "indicatorStatuses": {
+          "mood": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": ["TRD-MOOD-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-BP-01: 5-day average systolic >= 135 -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "bp_systolic": 130
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "bp_systolic": 140
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "bp_systolic": 140
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-12",
+            "log": {
+              "date": "2026-06-12",
+              "bp_systolic": 140
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-11",
+            "log": {
+              "date": "2026-06-11",
+              "bp_systolic": 140
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "indicatorStatuses": {
+          "bp_systolic": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": ["TRD-BP-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-HR-01: HR 15+ above 14-day baseline for 3 days -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 90
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "heart_rate": 90
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "heart_rate": 90
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-29",
+            "log": {
+              "date": "2026-05-29",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-28",
+            "log": {
+              "date": "2026-05-28",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-27",
+            "log": {
+              "date": "2026-05-27",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-26",
+            "log": {
+              "date": "2026-05-26",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-25",
+            "log": {
+              "date": "2026-05-25",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-24",
+            "log": {
+              "date": "2026-05-24",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-23",
+            "log": {
+              "date": "2026-05-23",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-22",
+            "log": {
+              "date": "2026-05-22",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-21",
+            "log": {
+              "date": "2026-05-21",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-20",
+            "log": {
+              "date": "2026-05-20",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-19",
+            "log": {
+              "date": "2026-05-19",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-18",
+            "log": {
+              "date": "2026-05-18",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-17",
+            "log": {
+              "date": "2026-05-17",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-05-16",
+            "log": {
+              "date": "2026-05-16",
+              "heart_rate": 70
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "indicatorStatuses": {
+          "heart_rate": "green"
+        },
+        "flagIds": [],
+        "trendIds": ["TRD-HR-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-EXR-01: under 30min exercise for 3 days -> trend yellow, today's own band is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "exercise_resistance_min": 10,
+          "exercise_cardio_min": 10
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "exercise_resistance_min": 5,
+              "exercise_cardio_min": 10
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "exercise_resistance_min": 0,
+              "exercise_cardio_min": 20
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "exercise_minutes": "red"
+        },
+        "flagIds": [],
+        "trendIds": ["TRD-EXR-01"],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "TRD-WGT-01: weight loss > 3% in 14 days -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "weight_kg": 68
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-12",
+            "log": {
+              "date": "2026-06-12"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-11",
+            "log": {
+              "date": "2026-06-11"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-10",
+            "log": {
+              "date": "2026-06-10"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-09",
+            "log": {
+              "date": "2026-06-09"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-08",
+            "log": {
+              "date": "2026-06-08"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-07",
+            "log": {
+              "date": "2026-06-07"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-06",
+            "log": {
+              "date": "2026-06-06"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-05",
+            "log": {
+              "date": "2026-06-05"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-04",
+            "log": {
+              "date": "2026-06-04"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-03",
+            "log": {
+              "date": "2026-06-03"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-02",
+            "log": {
+              "date": "2026-06-02"
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-01",
+            "log": {
+              "date": "2026-06-01",
+              "weight_kg": 72
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": [],
+        "trendIds": ["TRD-WGT-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-RAD-01: cumulative radiation projected over mission budget -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "radiation_msv": 1
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 90,
+          "missionTotalDays": 180,
+          "radiationMissionBudgetMsv": 100,
+          "radiationCumulativeMsv": 40
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": [],
+        "trendIds": ["TRD-RAD-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-MISS-01: 2-day gap since last log -> yellow reminder",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-12",
+            "log": {
+              "date": "2026-06-12"
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": [],
+        "trendIds": ["TRD-MISS-01"],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "TRD-MISS-01: 5-day gap since last log -> red, surgeon-view alert",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-09",
+            "log": {
+              "date": "2026-06-09"
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "flagIds": [],
+        "trendIds": ["TRD-MISS-01"],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "TRD-TEAM-01: team_relations <= 2 for 3 consecutive days -> trend yellow, today's own band is red",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "team_relations": 2
+        },
+        "symptoms": [],
+        "history": [
+          {
+            "date": "2026-06-14",
+            "log": {
+              "date": "2026-06-14",
+              "team_relations": 2
+            },
+            "symptoms": []
+          },
+          {
+            "date": "2026-06-13",
+            "log": {
+              "date": "2026-06-13",
+              "team_relations": 2
+            },
+            "symptoms": []
+          }
+        ],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "team_relations": "red"
+        },
+        "flagIds": [],
+        "trendIds": ["TRD-TEAM-01"],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "Escalation: nothing entered -> none",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "green",
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "none"
+      }
+    },
+    {
+      "name": "Escalation: single yellow indicator -> self_care",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 105
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "indicatorStatuses": {
+          "heart_rate": "yellow"
+        },
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "Escalation: single red indicator -> contact_surgeon",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "heart_rate": 120
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "red",
+        "indicatorStatuses": {
+          "heart_rate": "red"
+        },
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "contact_surgeon"
+      }
+    },
+    {
+      "name": "Escalation: CMB-SAFETY-01 -> emergency",
+      "input": {
+        "log": {
+          "date": "2026-06-15",
+          "selfHarmThoughts": true
+        },
+        "symptoms": [],
+        "history": [],
+        "mission": {
+          "environment": "station",
+          "missionDay": 30
+        }
+      },
+      "expect": {
+        "overall": "critical",
+        "flagIds": ["CMB-SAFETY-01"],
+        "trendIds": [],
+        "escalationLevel": "emergency"
+      }
+    },
+    {
+      "name": "CMB-SAM-01: nausea+dizziness on day 1 after a gravity change (late mission) -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "mars_base",
+          "missionDay": 200,
+          "daysSinceGravityChange": 1
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": ["CMB-SAM-01"],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "CMB-SAM-01: nausea+dizziness on day 3 after a gravity change -> yellow",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "mars_base",
+          "missionDay": 200,
+          "daysSinceGravityChange": 3
+        }
+      },
+      "expect": {
+        "overall": "yellow",
+        "flagIds": ["CMB-SAM-01"],
+        "trendIds": [],
+        "escalationLevel": "self_care"
+      }
+    },
+    {
+      "name": "CMB-SAM-01 does NOT fire on day 4 after a gravity change",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "mars_base",
+          "missionDay": 200,
+          "daysSinceGravityChange": 4
+        }
+      },
+      "expect": {
+        "overall": "green",
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "none"
+      }
+    },
+    {
+      "name": "CMB-SAM-01 does NOT fire late in a mission with no gravity change (rover)",
+      "input": {
+        "log": {
+          "date": "2026-06-15"
+        },
+        "symptoms": [
+          {
+            "symptom": "nausea_vomiting",
+            "severity": 1
+          },
+          {
+            "symptom": "dizziness",
+            "severity": 1
+          }
+        ],
+        "history": [],
+        "mission": {
+          "environment": "rover",
+          "missionDay": 200
+        }
+      },
+      "expect": {
+        "overall": "green",
+        "flagIds": [],
+        "trendIds": [],
+        "escalationLevel": "none"
+      }
+    }
+  ]
+}
