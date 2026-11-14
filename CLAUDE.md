@@ -187,7 +187,7 @@ If a chunk is too big for one session, split it yourself into C#a / C#b, add bot
 - **Build:** reachability check (`/health` with timeout, not just `navigator.onLine`), outbox drain in batches with exponential backoff, `/sync/push` and `/sync/pull?since=`, idempotent upserts by UUID, soft deletes, version conflicts (never lose data), crew registry sync, sync screen (last synced, pending count, Sync now, export/import JSON/CSV).
 - **Done when:** data entered offline reaches the server exactly once after reconnecting, a second device sees the same astronauts and logs, conflicts keep both versions, and tests cover push/pull/conflict/retry.
 
-### [ ] C15: Crew overview (commander/surgeon)
+### [x] C15: Crew overview (commander/surgeon)
 - **Read:** SPEC 8.3 screen 0 and 10, 13
 - **Build:** crew overview table/grid by name and crew ID (last check-in, overall status, flags, sparklines), search/sort, read-only astronaut drill-down using the existing dashboard/trends/body components with `readOnly`, surgeon notes, audit log of who viewed whom.
 - **Done when:** commander/surgeon see every astronaut; astronaut role cannot open the overview; nothing is editable in read-only mode.
