@@ -11,6 +11,9 @@ if (process.platform === "win32") {
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  // The offline/PWA test needs a production build: playwright.offline.config.ts.
+  testIgnore: /offline\.pwa\.spec\.ts$/,
+  timeout: 120_000,
   fullyParallel: true,
   reporter: "list",
   use: {
