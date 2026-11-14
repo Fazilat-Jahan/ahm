@@ -185,6 +185,25 @@ export interface SyncMeta {
   deviceId?: string;
 }
 
+/** The losing side of a sync conflict, kept verbatim on this device
+ * (SPEC §7.4: "client keeps both ... never lose a health record"). Rows
+ * here are never deleted by sync; they are listed on the Sync screen and
+ * included in exports. */
+export interface SyncConflictRecord {
+  id?: number;
+  entity: string;
+  entityId: string;
+  astronautId?: string;
+  /** `version`: the same record was changed on two devices.
+   * `same_date`: another log for that astronaut and date already existed.
+   * `parent_missing`: the record belonged to a log that lost a conflict. */
+  kind: "version" | "same_date" | "parent_missing";
+  /** The copy stored here: this device's (`local`). */
+  loser: "local";
+  data: unknown;
+  createdAt: string;
+}
+
 export class AHMDB extends Dexie {
   astronauts!: Table<Astronaut, string>;
   logs!: Table<DailyLog, string>;
@@ -196,6 +215,7 @@ export class AHMDB extends Dexie {
   settings!: Table<Setting, string>;
   outbox!: Table<OutboxItem, number>;
   syncMeta!: Table<SyncMeta, string>;
+  conflicts!: Table<SyncConflictRecord, number>;
 
   constructor() {
     super("ahm");
@@ -210,6 +230,11 @@ export class AHMDB extends Dexie {
       settings: "key",
       outbox: "++seq, entity, entityId, createdAt",
       syncMeta: "key",
+    });
+    // v2 (C14): the local conflict archive. Adding a store needs no data
+    // migration; existing stores and rows are untouched.
+    this.version(2).stores({
+      conflicts: "++id, entity, entityId, astronautId, createdAt",
     });
   }
 }
