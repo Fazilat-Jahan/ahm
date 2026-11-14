@@ -132,6 +132,7 @@ def test_empty_server_pull_is_empty(client) -> None:
     assert all(rows == [] for rows in body["changes"].values())
     assert set(body["changes"]) == {
         "astronaut", "daily_log", "symptom_entry", "evaluation", "advice_followup", "reminder",
+        "surgeon_note",
     }
     assert body["serverTime"].endswith("Z")
 
@@ -427,3 +428,77 @@ def test_client_pin_iterations_match_the_frontend() -> None:
         pytest.skip("frontend not checked out")
     match = re.search(r"const ITERATIONS = ([\d_]+);", source.read_text(encoding="utf-8"))
     assert match and int(match.group(1).replace("_", "")) == CLIENT_PIN_ITERATIONS
+
+
+# ---- surgeon notes and the access log (C15) ------------------------------------------
+
+
+def _note(astronaut_id: str, author: dict, **over) -> dict:
+    return {
+        "id": uid(), "astronautId": astronaut_id, "authorId": author["id"],
+        "authorName": author["name"], "authorCrewCode": author["crewCode"],
+        "text": "Reviewed the last week. Keep logging sleep.",
+        "createdAt": T1, "updatedAt": T1, "version": 1, **over,
+    }
+
+
+def test_surgeon_notes_sync_to_other_devices(client, db_url) -> None:
+    alice = astronaut("AST-001")
+    surgeon = astronaut("SRG-001", role="surgeon")
+    note = _note(alice["id"], surgeon)
+    body = push(
+        client, [item("astronaut", alice), item("astronaut", surgeon), item("surgeon_note", note)]
+    ).json()
+    assert body["rejected"] == [] and note["id"] in body["accepted"]
+    pulled = pull(client)["changes"]["surgeon_note"]
+    assert [row["data"] for row in pulled] == [note]
+    assert count(db_url, "surgeon_notes", "text LIKE 'Reviewed%'") == 1
+    # Sending it again does not duplicate it.
+    push(client, [item("surgeon_note", note)])
+    assert count(db_url, "surgeon_notes") == 1
+
+
+def test_only_a_surgeon_can_write_notes_and_they_cannot_be_deleted(client, db_url) -> None:
+    alice = astronaut("AST-001")
+    commander = astronaut("CDR-001", role="commander")
+    surgeon = astronaut("SRG-001", role="surgeon")
+    push(client, [item("astronaut", alice), item("astronaut", commander), item("astronaut", surgeon)])
+
+    for author in (commander, alice):
+        note = _note(alice["id"], author)
+        body = push(client, [item("surgeon_note", note)]).json()
+        assert body["accepted"] == []
+        assert "surgeon" in body["rejected"][0]["reason"]
+    forged = _note(alice["id"], {"id": uid(), "name": "Nobody", "crewCode": "XXX-000"})
+    assert push(client, [item("surgeon_note", forged)]).json()["accepted"] == []
+    assert count(db_url, "surgeon_notes") == 0
+
+    note = _note(alice["id"], surgeon)
+    push(client, [item("surgeon_note", note)])
+    delete = {"entity": "surgeon_note", "id": note["id"], "op": "delete"}
+    body = push(client, [delete]).json()
+    assert body["accepted"] == [] and "cannot be deleted" in body["rejected"][0]["reason"]
+    assert count(db_url, "surgeon_notes", "deleted_at IS NULL") == 1
+
+
+def test_access_log_entries_are_stored_once_and_never_sent_back(client, db_url) -> None:
+    alice = astronaut("AST-001")
+    surgeon = astronaut("SRG-001", role="surgeon")
+    push(client, [item("astronaut", alice), item("astronaut", surgeon)])
+    entry = {
+        "id": uid(), "viewerId": surgeon["id"], "viewerName": surgeon["name"],
+        "viewerCrewCode": "SRG-001", "viewerRole": "surgeon",
+        "astronautId": alice["id"], "astronautName": alice["name"],
+        "astronautCrewCode": "AST-001", "action": "view", "at": T2,
+    }
+    audit_item = {"entity": "audit_entry", "id": entry["id"], "op": "upsert", "updatedAt": T2, "data": entry}
+    for _ in range(3):
+        assert push(client, [audit_item]).json()["accepted"] == [entry["id"]]
+    assert count(db_url, "audit_log") == 1
+    assert count(db_url, "audit_log", "actor = 'SRG-001 (surgeon)' AND action = 'view'") == 1
+    assert "audit_entry" not in pull(client)["changes"]
+
+    # It cannot be removed or rewritten.
+    delete = {"entity": "audit_entry", "id": entry["id"], "op": "delete"}
+    assert push(client, [delete]).json()["accepted"] == []
+    assert count(db_url, "audit_log") == 1

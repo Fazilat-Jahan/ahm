@@ -36,7 +36,7 @@ ahm/
 │           rule-engine-golden.json         # TS engine's full output per vector; Python must match exactly (generated)
 ├─ frontend/
 │  ├─ app/ (app)/{page,checkin,body,trends,learn,reminders,rewards,environment,sync,settings,crew}
-│  ├─ components/ status/ body3d/ crew/ checkin/ charts/ guidance/ game/ reminders/ common/
+│  ├─ components/ status/ body3d/ crew/ checkin/ charts/ guidance/ game/ reminders/ sync/ common/
 │  ├─ lib/ rules/ db/ sync/ notifications/ gamification/ time/
 │  ├─ config/ thresholds.ts hazards.ts bodyParts.ts symptoms.ts measurements.ts environments.ts learn.ts badges.ts
 │  ├─ content/ learn/*.md risks.ts riskGuidance.ts sources.ts
@@ -74,6 +74,7 @@ pytest                                       # temp SQLite files under backend/.
 #      DATABASE_URL=sqlite+aiosqlite:///./ahm.db   (local/offline, default)
 #      DATABASE_URL=postgresql+asyncpg://...        (Neon; paste the Neon string as given)
 #      SECRET_KEY=...                               (must be changed from the default)
+#      SYNC_KEY=...                                 (enables /sync; type the same key into each device's Sync screen)
 ```
 
 ## 5. Conventions
@@ -181,7 +182,7 @@ If a chunk is too big for one session, split it yourself into C#a / C#b, add bot
 - **Build:** Python port in `app/services/rule_engine/` using `thresholds.json`; `POST /evaluate`; store `rules_version`.
 - **Done when:** the Python engine passes **the same** `shared/rule-test-vectors.json` as the TypeScript engine.
 
-### [ ] C14: Sync (outbox, push/pull)
+### [x] C14: Sync (outbox, push/pull)
 - **Read:** SPEC 5.1, 7.4, 17 (items 2, 3, 8), Appendix C, D
 - **Build:** reachability check (`/health` with timeout, not just `navigator.onLine`), outbox drain in batches with exponential backoff, `/sync/push` and `/sync/pull?since=`, idempotent upserts by UUID, soft deletes, version conflicts (never lose data), crew registry sync, sync screen (last synced, pending count, Sync now, export/import JSON/CSV).
 - **Done when:** data entered offline reaches the server exactly once after reconnecting, a second device sees the same astronauts and logs, conflicts keep both versions, and tests cover push/pull/conflict/retry.

@@ -12,6 +12,9 @@ export const SYNC_ENTITIES = [
   "evaluation",
   "advice_followup",
   "reminder",
+  "surgeon_note",
+  // Sent to the server only; the server never sends audit entries back.
+  "audit_entry",
 ] as const;
 
 export type SyncEntity = (typeof SYNC_ENTITIES)[number];

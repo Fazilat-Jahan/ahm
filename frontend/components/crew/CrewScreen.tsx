@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { EmptyState } from "@/components/common/EmptyState";
+import { ConnectServerCard } from "@/components/sync/ConnectServerCard";
+import { getLastCheckinDates } from "@/lib/db/crewRepo";
 import { getDb } from "@/lib/db/schema";
 import { verifyAstronautPin } from "@/lib/db/repo";
 import { useActiveAstronautStore } from "@/lib/store/activeAstronaut";
@@ -15,6 +17,7 @@ import { RegisterAstronautForm } from "./RegisterAstronautForm";
  * layout falls back to whenever no astronaut is unlocked. */
 export function CrewScreen() {
   const astronauts = useLiveQuery(() => getDb().astronauts.toArray());
+  const lastCheckinDates = useLiveQuery(() => getLastCheckinDates());
   const setActiveAstronaut = useActiveAstronautStore(
     (s) => s.setActiveAstronaut,
   );
@@ -85,6 +88,7 @@ export function CrewScreen() {
               <CrewCard
                 key={astronaut.id}
                 astronaut={astronaut}
+                lastCheckinDate={lastCheckinDates?.[astronaut.id]}
                 onSelect={(id) => {
                   setSelectedId(id);
                   setPinError(null);
@@ -105,6 +109,8 @@ export function CrewScreen() {
               + Register another astronaut
             </button>
           )}
+
+        {astronauts !== undefined && !showRegisterForm && <ConnectServerCard />}
 
         {showRegisterForm && (
           <>

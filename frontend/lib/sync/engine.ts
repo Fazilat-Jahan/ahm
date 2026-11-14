@@ -52,6 +52,8 @@ function tableFor(db: AHMDB, entity: SyncEntity): AnyTable {
     evaluation: db.evaluations,
     advice_followup: db.followups,
     reminder: db.reminders,
+    surgeon_note: db.surgeonNotes,
+    audit_entry: db.auditLog,
   };
   return tables[entity] as AnyTable;
 }
@@ -64,6 +66,8 @@ function syncTables(db: AHMDB) {
     db.evaluations,
     db.followups,
     db.reminders,
+    db.surgeonNotes,
+    db.auditLog,
     db.outbox,
     db.conflicts,
     db.settings,

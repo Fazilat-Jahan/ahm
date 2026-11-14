@@ -31,9 +31,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.models import (
     AdviceFollowup,
     Astronaut,
+    AuditLog,
     DailyLog,
     Evaluation,
     Reminder,
+    SurgeonNote,
     SymptomEntry,
     SyncConflict,
     SyncDevice,
@@ -48,6 +50,7 @@ MODELS: dict[str, type] = {
     "evaluation": Evaluation,
     "advice_followup": AdviceFollowup,
     "reminder": Reminder,
+    "surgeon_note": SurgeonNote,
 }
 
 # Pull order: parents before children, so a device can apply in order.
@@ -58,6 +61,7 @@ PULL_ORDER = (
     "evaluation",
     "advice_followup",
     "reminder",
+    "surgeon_note",
 )
 
 _LOG_VALUE_FIELDS = (
@@ -78,6 +82,13 @@ _LOG_VALUE_FIELDS = (
     "water_ml",
     "radiation_msv",
 )
+
+
+def _maybe_uuid(value: Any) -> UUID | None:
+    try:
+        return UUID(str(value))
+    except (ValueError, TypeError):
+        return None
 
 
 def as_utc(value: datetime | None) -> datetime | None:
@@ -159,7 +170,46 @@ def _columns(entity: str, record: Any) -> dict[str, Any]:
             "enabled": record.enabled,
             "created_at": as_utc(record.createdAt),
         }
+    if entity == "surgeon_note":
+        return {
+            "astronaut_id": record.astronautId,
+            "author_id": record.authorId,
+            "text": record.text,
+            "created_at": as_utc(record.createdAt),
+        }
     raise ValueError(entity)
+
+
+async def _apply_audit_entry(
+    session: AsyncSession, item: PushItem
+) -> tuple[str, dict[str, Any] | None]:
+    """Access-log entries are append-only and one-way (device -> server):
+    stored once, keyed by the app's id, never updated, never sent back."""
+    if item.op != "upsert" or item.data is None:
+        return "rejected", {"reason": "An access-log entry cannot be changed or deleted."}
+    try:
+        record = RECORD_SCHEMAS["audit_entry"].model_validate(item.data)
+    except ValidationError as error:
+        first = error.errors()[0]
+        location = ".".join(str(part) for part in first["loc"])
+        return "rejected", {"reason": f"{location}: {first['msg']}"}
+    if record.id != item.id:
+        return "rejected", {"reason": "The record id does not match the item id."}
+    already = (
+        await session.execute(select(AuditLog).where(AuditLog.client_id == item.id))
+    ).scalar_one_or_none()
+    if already is None:
+        session.add(
+            AuditLog(
+                client_id=item.id,
+                actor=f"{record.viewerCrewCode} ({record.viewerRole})",
+                action=record.action,
+                entity="astronaut",
+                entity_id=record.astronautId,
+                at=as_utc(record.at),
+            )
+        )
+    return "accepted", None
 
 
 def _row_version(row: Any) -> int:
@@ -214,6 +264,11 @@ async def _apply_upsert(
     data = item.data
     if data is None:
         return "rejected", {"reason": "An upsert needs the record in `data`."}
+    if item.entity == "surgeon_note":
+        # Only a surgeon's notes are accepted, whatever device sent them.
+        author = await session.get(Astronaut, _maybe_uuid(data.get("authorId")))
+        if author is None or author.role != "surgeon":
+            return "rejected", {"reason": "Only the flight surgeon can add notes."}
     try:
         record = RECORD_SCHEMAS[item.entity].model_validate(data)
     except ValidationError as error:
@@ -342,6 +397,8 @@ async def _apply_upsert(
 async def _apply_delete(
     session: AsyncSession, item: PushItem
 ) -> tuple[str, dict[str, Any] | None]:
+    if item.entity == "surgeon_note":
+        return "rejected", {"reason": "A surgeon note cannot be deleted."}
     model = MODELS[item.entity]
     if not hasattr(model, "deleted_at"):
         return "rejected", {"reason": f"A {item.entity} cannot be deleted."}
@@ -366,7 +423,9 @@ async def push(
         try:
             # One savepoint per item: a bad item cannot undo the others.
             async with session.begin_nested():
-                if item.op == "upsert":
+                if item.entity == "audit_entry":
+                    outcome, detail = await _apply_audit_entry(session, item)
+                elif item.op == "upsert":
                     outcome, detail = await _apply_upsert(session, item, device_id)
                 else:
                     outcome, detail = await _apply_delete(session, item)

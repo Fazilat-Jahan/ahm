@@ -19,7 +19,15 @@ const TABS = [
   {
     label: "More",
     href: "/settings",
-    match: ["/settings", "/reminders", "/learn", "/environment", "/rewards"],
+    match: [
+      "/settings",
+      "/reminders",
+      "/learn",
+      "/environment",
+      "/rewards",
+      "/sync",
+      "/crew",
+    ],
   },
 ] as const;
 

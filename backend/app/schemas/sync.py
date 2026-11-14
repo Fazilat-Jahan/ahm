@@ -20,7 +20,14 @@ from app.schemas.common import Environment, FollowupResponse, Role, Status, UtcD
 from app.schemas.misc import TIME_PATTERN
 
 Entity = Literal[
-    "astronaut", "daily_log", "symptom_entry", "evaluation", "advice_followup", "reminder"
+    "astronaut",
+    "daily_log",
+    "symptom_entry",
+    "evaluation",
+    "advice_followup",
+    "reminder",
+    "surgeon_note",
+    "audit_entry",
 ]
 
 
@@ -181,6 +188,29 @@ class ReminderRecord(_Record):
     version: int = Field(ge=1)
 
 
+class SurgeonNoteRecord(_Record):
+    astronautId: UUID
+    authorId: UUID
+    authorName: str = Field(min_length=1, max_length=100)
+    authorCrewCode: str = Field(min_length=3, max_length=20)
+    text: str = Field(min_length=1, max_length=1000)
+    createdAt: datetime
+    updatedAt: datetime
+    version: int = Field(ge=1)
+
+
+class AuditRecord(_Record):
+    """Who opened whose data on a device."""
+
+    viewerId: UUID
+    viewerName: str = Field(min_length=1, max_length=100)
+    viewerCrewCode: str = Field(min_length=3, max_length=20)
+    viewerRole: Role
+    astronautId: UUID
+    action: Literal["view"]
+    at: datetime
+
+
 RECORD_SCHEMAS: dict[str, type[_Record]] = {
     "astronaut": AstronautRecord,
     "daily_log": DailyLogRecord,
@@ -188,4 +218,6 @@ RECORD_SCHEMAS: dict[str, type[_Record]] = {
     "evaluation": EvaluationRecord,
     "advice_followup": FollowupRecord,
     "reminder": ReminderRecord,
+    "surgeon_note": SurgeonNoteRecord,
+    "audit_entry": AuditRecord,
 }

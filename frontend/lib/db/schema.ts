@@ -204,6 +204,37 @@ export interface SyncConflictRecord {
   createdAt: string;
 }
 
+/** A note the flight surgeon wrote about one astronaut (SPEC §8.3 screen
+ * 10 / §13: the surgeon role is "read-only + notes"). Append-only: a
+ * note is never edited or deleted, so the record of what was written
+ * stays intact. */
+export interface SurgeonNote {
+  id: string;
+  astronautId: string;
+  authorId: string;
+  authorName: string;
+  authorCrewCode: string;
+  text: string;
+  createdAt: string;
+  updatedAt: string;
+  version: number;
+}
+
+/** SPEC §13: "Audit log for ground-view access." One row each time a
+ * commander, surgeon or admin opens another astronaut's data. */
+export interface AuditEntry {
+  id: string;
+  viewerId: string;
+  viewerName: string;
+  viewerCrewCode: string;
+  viewerRole: AstronautRole;
+  astronautId: string;
+  astronautName: string;
+  astronautCrewCode: string;
+  action: "view";
+  at: string;
+}
+
 export class AHMDB extends Dexie {
   astronauts!: Table<Astronaut, string>;
   logs!: Table<DailyLog, string>;
@@ -216,6 +247,8 @@ export class AHMDB extends Dexie {
   outbox!: Table<OutboxItem, number>;
   syncMeta!: Table<SyncMeta, string>;
   conflicts!: Table<SyncConflictRecord, number>;
+  surgeonNotes!: Table<SurgeonNote, string>;
+  auditLog!: Table<AuditEntry, string>;
 
   constructor() {
     super("ahm");
@@ -235,6 +268,11 @@ export class AHMDB extends Dexie {
     // migration; existing stores and rows are untouched.
     this.version(2).stores({
       conflicts: "++id, entity, entityId, astronautId, createdAt",
+    });
+    // v3 (C15): surgeon notes and the access audit log.
+    this.version(3).stores({
+      surgeonNotes: "id, astronautId, createdAt",
+      auditLog: "id, astronautId, viewerId, at",
     });
   }
 }

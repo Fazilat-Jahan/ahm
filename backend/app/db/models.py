@@ -268,6 +268,26 @@ class SyncDevice(Base):
     last_seen_at: Mapped[datetime | None] = mapped_column(TZDateTime)
 
 
+class SurgeonNote(Base):
+    """A flight surgeon's note about one astronaut (C15). Append-only in
+    the app: never edited or deleted there."""
+
+    __tablename__ = "surgeon_notes"
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True)
+    astronaut_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("astronauts.id"), nullable=False)
+    author_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("astronauts.id"), nullable=False)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(TZDateTime, nullable=False, default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(TZDateTime, nullable=False, default=utcnow)
+    version: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    deleted_at: Mapped[datetime | None] = mapped_column(TZDateTime)
+    payload: Mapped[dict | None] = mapped_column(JSON)
+    server_updated_at: Mapped[datetime] = mapped_column(
+        TZDateTime, nullable=False, default=utcnow, onupdate=utcnow, index=True
+    )
+
+
 class SyncConflict(Base):
     """The losing side of every sync conflict, kept verbatim (SPEC 7.4:
     "never lose a health record"). Nothing here is ever deleted by sync."""
@@ -305,3 +325,6 @@ class AuditLog(Base):
     entity: Mapped[str | None] = mapped_column(Text)
     entity_id: Mapped[uuid.UUID | None] = mapped_column(Uuid)
     at: Mapped[datetime] = mapped_column(TZDateTime, nullable=False, default=utcnow)
+    # Set for entries that came from a device through sync (the app's own
+    # id for the entry), so a repeated push cannot log the same view twice.
+    client_id: Mapped[uuid.UUID | None] = mapped_column(Uuid, unique=True)
