@@ -46,9 +46,7 @@ export async function saveSyncConfig(
 ): Promise<SyncConfig> {
   const normalized = normalizeServerUrl(serverUrl);
   if (!normalized) {
-    throw new Error(
-      "Enter the server address like http://192.168.1.10:8000",
-    );
+    throw new Error("Enter the server address like http://192.168.1.10:8000");
   }
   const key = syncKey.trim();
   if (!key) throw new Error("Enter the sync key.");

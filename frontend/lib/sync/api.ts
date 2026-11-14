@@ -1,8 +1,4 @@
-import type {
-  PullResponse,
-  PushItem,
-  PushResponse,
-} from "./protocol";
+import type { PullResponse, PushItem, PushResponse } from "./protocol";
 
 /**
  * The only place the app talks to the backend. Every call is optional
@@ -57,7 +53,8 @@ export async function canReachBackend(
   const {
     timeoutMs = 2500,
     fetchImpl = fetch,
-    isOnline = () => (typeof navigator === "undefined" ? true : navigator.onLine),
+    isOnline = () =>
+      typeof navigator === "undefined" ? true : navigator.onLine,
   } = options;
   if (!isOnline()) return false;
   const controller = new AbortController();
@@ -136,9 +133,7 @@ export function createSyncApi({
       }),
     pull: (since) =>
       request<PullResponse>(
-        since
-          ? `/sync/pull?since=${encodeURIComponent(since)}`
-          : "/sync/pull",
+        since ? `/sync/pull?since=${encodeURIComponent(since)}` : "/sync/pull",
         { method: "GET" },
       ),
   };

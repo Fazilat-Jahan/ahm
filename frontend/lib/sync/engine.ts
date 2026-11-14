@@ -225,8 +225,7 @@ async function applyChange(
   }
 
   if (local) {
-    const localVersion =
-      typeof local.version === "number" ? local.version : 1;
+    const localVersion = typeof local.version === "number" ? local.version : 1;
     if (change.version < localVersion) return false; // local is newer
     if (change.version === localVersion && sameContent(local, change.data)) {
       return false; // already have exactly this
@@ -273,10 +272,7 @@ export async function pullChanges(api: SyncApi): Promise<number> {
 }
 
 export type SyncOutcome =
-  | "ok"
-  | "not_configured"
-  | SyncFailureKind
-  | "local_error";
+  "ok" | "not_configured" | SyncFailureKind | "local_error";
 
 export interface SyncSummary extends PushResult {
   outcome: SyncOutcome;
