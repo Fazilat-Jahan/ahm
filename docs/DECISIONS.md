@@ -4,6 +4,18 @@ Record every assumption here: date, decision, reason. Newest first.
 
 ---
 
+**2026-11-15 — Final verification pass after the C7/C8 replacement: fixes and findings**
+
+Verification only; nothing in C7/C8, the backend, the rule engine or the thresholds was redesigned.
+
+- **Build:** `@axe-core/playwright` added to `devDependencies` (the C16 axe test imported it but it was never declared, so `next build` failed its type check). The stale `@ts-expect-error` in `tests/ci/noFakeData.test.ts` was removed: with `allowJs` the `.mjs` import is type-checked, so the directive itself was the error; no assertion changed.
+- **`dark:` utilities now follow the app theme, not the OS** (`@custom-variant dark` in `globals.css`). The app is dark unless `data-theme="light"` (SPEC §8.4), but `dark:` was tied to `prefers-color-scheme`, so on a light-mode OS the dark background got light-theme text colours. axe found contrast failures on nearly every screen in that case (and the bottom bar rendered white). One rule; no component changed for this.
+- **Ten grey text classes raised to pass WCAG AA** (`text-zinc-500` on the dark background is 4.1:1; now `text-zinc-600 dark:text-zinc-400`): `OfflineBadge`, `CrewCard`, `CrewScreen` (2), `CheckinWizard`, `MeasurementCard` (2), `MeasurementsStep`, `MoodStep`, `NumberStepperInput`. Colour only.
+- **Offline navigation on a fresh install was broken (rule 1).** The service worker precached only the start page and static files; other routes were stored only once their links had been on screen while online, kept for 24 hours and at most 32 entries (plugin defaults), under a URL whose query changes with the current screen. A device that went offline before the first unlock could not open Check-in, Body or anything else, and the project's own offline test failed. Fix: `lib/pwa/useOfflineRouteWarmup.ts` (called from the app layout) prefetches every route in `lib/pwa/appRoutes.ts` once the worker controls the page, and a runtime-caching rule in `next.config.ts` (`ahm-route-prefetch`) keeps those payloads with no expiry and ignores the query string on lookup. `tests/pwa/appRoutes.test.ts` fails if a new page is not listed.
+- **Not fixed, by choice:** reloading the browser while offline on a screen other than Home still depends on that page having been loaded as a document before (the start page is always available). In normal use the app is opened at Home.
+- **`tests/e2e/helpers.ts` `completeCheckin`** waited for the text "Rule ", which a green result never shows (it shows "Rules version N"), so the offline test could not pass with its own heart rate of 72. It now waits for "Rules version N". Same strictness: it still proves the result screen was reached.
+- **Model licence (open, not changed):** `body.glb` is built from BodyParts3D release 3.0 as published by a mirror under CC BY-SA 2.1 Japan. SPEC §8.3 asks for "CC0 or CC-BY". The official archive (dbarchive.biosciencedbc.jp, licence page updated 2025-02-27) now states CC BY 4.0 and offers release 4.0; whether that statement also covers the old 3.0 files is not written anywhere on it. Options are in the hand-off note; the model was not replaced and the README still states CC BY-SA 2.1 Japan.
+
 **2026-11-15 — C7/C8 replaced: anatomical 3D body with selectable organs**
 
 Requested as a replacement of C7 and C8 only. Nothing outside the body screen, its config, its store and its styles was changed; no backend, schema, rule or threshold change.

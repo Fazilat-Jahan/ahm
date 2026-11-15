@@ -9,6 +9,7 @@ import {
   registerAndUnlock,
   type TestAstronaut,
 } from "./helpers";
+import { APP_ROUTES } from "../../lib/pwa/appRoutes";
 
 // SPEC §14 "Offline" + C16: go offline, register, check in, reload, data
 // persists, go online, the outbox drains, and the server holds each record
@@ -52,6 +53,19 @@ test("works offline end to end, then syncs exactly once", async ({
   await expect
     .poll(() => page.evaluate(() => !!navigator.serviceWorker.controller))
     .toBe(true);
+  // Still step 1: the app stores every screen for offline use in the
+  // background once the worker is in control (two small payloads per
+  // route). Wait until all of them are stored before cutting the network.
+  await expect
+    .poll(
+      () =>
+        page.evaluate(async () => {
+          const cache = await caches.open("ahm-route-prefetch");
+          return (await cache.keys()).length;
+        }),
+      { timeout: 60_000 },
+    )
+    .toBeGreaterThanOrEqual(APP_ROUTES.length * 2);
   expect(await serverCount(request, "astronaut")).toBe(0);
 
   // 2. Network off for everything below until step 6.
@@ -64,7 +78,7 @@ test("works offline end to end, then syncs exactly once", async ({
   await registerAndUnlock(page, ASTRONAUT);
   await completeCheckin(page, "72");
   await navTo(page, "Home");
-  await expect(page.getByText("72", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("72 bpm", { exact: true }).first()).toBeVisible();
 
   // 4. Reload offline: the app shell comes from the cache, data from
   // IndexedDB. Unlock again (reload locks the app by design).
@@ -74,7 +88,7 @@ test("works offline end to end, then syncs exactly once", async ({
     .click();
   await enterPin(page, ASTRONAUT.pin);
   await expectUnlocked(page, ASTRONAUT);
-  await expect(page.getByText("72", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("72 bpm", { exact: true }).first()).toBeVisible();
 
   // 5. Point the device at the server (saved locally, still offline).
   await openFromMore(page, "Sync and data");

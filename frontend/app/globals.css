@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
-/* `dark:` utilities follow the OS setting, as before, and are also
- * always on inside the 3D body screen (`.holo-root`), which is a dark
- * "medical bay" in either theme. */
-@custom-variant dark {
-  @media (prefers-color-scheme: dark) {
-    @slot;
-  }
-  &:where(.holo-root, .holo-root *) {
-    @slot;
-  }
-}
+/* `dark:` utilities follow the APP theme, not the OS setting. The app is
+ * dark by default (SPEC §8.4) and only light when `data-theme="light"` is
+ * set on the root, so `dark:` must be on in exactly the same cases as the
+ * dark `--background` below. Tying it to `prefers-color-scheme` left dark
+ * backgrounds with light-theme text colours on any device whose OS is in
+ * light mode (unreadable greys, failing WCAG contrast). The 3D body screen
+ * (`.holo-root`) is a dark "medical bay" in either theme. */
+@custom-variant dark (&:where(:root:not([data-theme="light"]) *, .holo-root, .holo-root *));
 
 /* SPEC §8.4: dark, low-glare theme is the default (habitat lighting); light
  * is an opt-in alternative (no toggle UI yet — that's a Settings chunk —

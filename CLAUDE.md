@@ -37,7 +37,7 @@ ahm/
 ├─ frontend/
 │  ├─ app/ (app)/{page,checkin,body,trends,learn,reminders,rewards,environment,sync,settings,crew}
 │  ├─ components/ status/ body3d/ crew/ checkin/ charts/ guidance/ game/ reminders/ sync/ common/
-│  ├─ lib/ rules/ db/ sync/ notifications/ gamification/ time/
+│  ├─ lib/ rules/ db/ sync/ notifications/ gamification/ time/ pwa/
 │  ├─ config/ thresholds.ts hazards.ts bodyParts.ts symptoms.ts measurements.ts environments.ts learn.ts badges.ts
 │  ├─ content/ learn/*.md risks.ts riskGuidance.ts sources.ts
 │  ├─ worker/ index.js                     # extra service-worker code (notification click), bundled by next-pwa

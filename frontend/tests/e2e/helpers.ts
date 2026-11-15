@@ -92,5 +92,7 @@ export async function completeCheckin(
   await page.getByRole("button", { name: "Good", exact: true }).click();
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Save check-in" }).click();
-  await expect(page.getByText(/Rule /).first()).toBeVisible();
+  // The result screen always shows the rules version it was evaluated
+  // with ("Rule <id>" lines only appear for non-green results).
+  await expect(page.getByText(/Rules version \d/).first()).toBeVisible();
 }
