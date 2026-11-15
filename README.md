@@ -210,9 +210,9 @@ key). It needs a Python that has `backend/requirements.txt` installed. Set
 `AHM_PYTHON` to it if `python3` / `python` is not that interpreter, e.g.
 `AHM_PYTHON=backend/.venv/bin/python`.
 
-CI (`.github/workflows/ci.yml`) runs the no-fake-data check first, then
-typecheck, lint, Vitest and build for the frontend, and pytest for the
-backend.
+There is no hosted CI. The checks run locally: the no-fake-data check runs
+automatically before every `npm run build` (`prebuild`), so a build fails on a
+finding, and again inside `npm test`.
 
 **No-fake-data check** (`frontend/scripts/check-no-fake-data.mjs`) scans
 `frontend/{app,components,lib,content,worker}` and `backend/{app,alembic}`,
