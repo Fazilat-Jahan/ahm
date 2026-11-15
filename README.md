@@ -255,10 +255,15 @@ CRITERIA_PLACEHOLDER
   network.
 - **Sync uses one shared device key**, not per-astronaut tokens. Anyone with
   the key can read and write every record on the server.
-- **3D body is a procedural model** built from three.js primitives (capsules
-  and spheres). No anatomical GLB model is included yet. The loader supports
-  `public/models/body.glb` with `region_*` meshes when one is added (see
-  [Third-party assets](#third-party-assets-and-licences)).
+- **3D body: organs are separate meshes, but data is per region.** The
+  model has 16 organ meshes; several organs share one region panel (liver,
+  stomach, pancreas and both intestines open "Gut"; spleen and thymus open
+  "Immune system"). There is no liver-, stomach- or spleen-specific
+  measurement in the app, so none is shown. Mind, muscles and skin have no
+  organ mesh and appear as markers. The model is one adult male body
+  (the only one BodyParts3D release 3.0 provides) and is simplified for
+  size, so fine anatomical detail is reduced; it is an illustration, not
+  a diagnostic image.
 - **Reminders** fire from the open app (or its service worker while the
   browser keeps it alive). There is no push server, so a fully closed browser
   cannot fire a notification. The in-app banner catches up when the app
@@ -333,15 +338,17 @@ sleep come from general adult clinical references, cited per indicator in
 
 ## Third-party assets and licences
 
-No third-party fonts, images, 3D models, analytics or CDN resources are
-loaded at runtime. Everything ships with the app.
+No third-party fonts, images, analytics or CDN resources are loaded at
+runtime. Everything, including the 3D body model and its decoder, ships
+with the app and is served from the app's own origin.
 
 ### Assets
 
 | Asset | Author / source | Licence | Used for | Modifications |
 |---|---|---|---|---|
-| 3D body | Built in this project from three.js primitives (`frontend/components/body3d/ProceduralBodyModel.tsx`) | Project's own code | Interactive 3D body | n/a. **No GLB model is included.** If `public/models/body.glb` is added, record its name, author, licence (CC0 or CC-BY only) and link here. |
-| Draco geometry decoder (`frontend/public/draco/`) | Google Draco, as shipped in `three/examples/jsm/libs/draco` | Apache-2.0 | Decoding a compressed GLB if one is added (bundled so nothing comes from a CDN) | None |
+| 3D human body with organs (`frontend/public/models/body.glb`) | [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html), release 3.0 (2011-09-15), © The Database Center for Life Science. Fetched as STL from the mirror [Kevin-Mattheus-Moerman/BodyParts3D](https://github.com/Kevin-Mattheus-Moerman/BodyParts3D). Reference: Mitsuhashi N. et al., *BodyParts3D: 3D structure database for anatomical concepts*, Nucleic Acids Res. 2009, [doi:10.1093/nar/gkn613](https://doi.org/10.1093/nar/gkn613) | [CC BY-SA 2.1 Japan](https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en). Required credit: "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan". **Share-alike:** `body.glb` is a derivative and is offered under the same licence; the app's code is not affected. | Interactive 3D body: skin shell plus 16 separately selectable organ meshes | Built by `frontend/scripts/body-model/build.mjs`: 17 anatomical concepts (FMA ids listed in that script) merged from their source parts, converted from millimetres/Z-up to metres/Y-up, simplified from about 4.4 million to about 130,000 triangles, normals recomputed, Draco-compressed, meshes renamed `body_skin` / `organ_*`. No shapes were edited by hand. |
+| Fallback 3D body | Built in this project from three.js primitives (`frontend/components/body3d/ProceduralBodyModel.tsx`) | Project's own code | Shown only if `body.glb` cannot be loaded | n/a |
+| Draco geometry decoder (`frontend/public/draco/`) | Google Draco, as shipped in `three/examples/jsm/libs/draco` | Apache-2.0 | Decoding `body.glb` (bundled so nothing comes from a CDN) | None |
 | App icon (`frontend/public/icons/icon.svg`) | This project | Project's own | PWA icon | n/a |
 | Icons in the UI | [Lucide](https://lucide.dev) via `lucide-react` | ISC | Status icons, navigation, buttons | None |
 | Fonts | The device's system font stack (`ui-sans-serif, system-ui, …`) | n/a | All text | No web fonts are bundled or downloaded |

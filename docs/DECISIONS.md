@@ -4,6 +4,23 @@ Record every assumption here: date, decision, reason. Newest first.
 
 ---
 
+**2026-11-15 — C7/C8 replaced: anatomical 3D body with selectable organs**
+
+Requested as a replacement of C7 and C8 only. Nothing outside the body screen, its config, its store and its styles was changed; no backend, schema, rule or threshold change.
+
+- **Model: BodyParts3D release 3.0, CC BY-SA 2.1 Japan** (© The Database Center for Life Science). Chosen because it is the one openly licensed source found with every organ as its own mesh. **This supersedes the earlier "CC0 or CC-BY only" note and the "user downloads the model" note** — the request asked for a model to be found and bundled. Share-alike applies to `body.glb` (a derivative, offered under the same licence), not to the app's code. Credit and modifications are in README. **Open item for the user:** confirm CC BY-SA is acceptable for the submission; if not, any other GLB with the same mesh names drops in.
+- **`body.glb` is generated, not hand-made:** `frontend/scripts/body-model/build.mjs` (own `package.json`, not an app dependency) downloads the listed FMA concepts, merges, simplifies, Draco-compresses. 17 meshes (skin + 16 organs), about 130,000 triangles, 665 KB. Re-run it to change detail levels or add an organ.
+- **Organs vs regions.** A region (SPEC §8.3 table) is what has text and data. An organ is one mesh. Each organ is hoverable/clickable on its own and opens its region's panel, titled with the organ's name. `BodyPart.meshName` became `BodyPart.organs[]`. Mapping: brain → Head / Brain; eyes → Eyes; heart → Heart; left lung, right lung, windpipe → Lungs; spleen, thymus → Immune system; stomach, liver, pancreas, small and large intestine → Gut; spine → Bones / Spine; left and right kidney → Kidneys. Mind, Muscles and Skin have no organ mesh and keep a marker (`RegionHotspot`).
+- **No liver/stomach/spleen region of their own.** The SPEC has no indicator, threshold or text for them, and CLAUDE.md rule 6 forbids writing medical content. They are real, selectable organs that show their region's real data; a missing reading says "No data yet".
+- **Status colours stay the app's status tokens** (green/yellow/red/critical, grey for no data). The request suggested cyan for "normal"; cyan is used instead for hover, selection and scene chrome, so a body colour always means the same as the badge next to it. Only `critical` pulses, as everywhere else.
+- **Data path unchanged:** the screen reads the astronaut's saved evaluation, logs and symptoms through the existing `lib/db/repo` functions (IndexedDB, kept in step with the server by the existing sync). No new endpoint, no direct API call from the screen (offline-first rule 1). New in the panel: rule id per indicator, check-in date, and a sparkline of the last 7 saved values.
+- **"What to do now" needs a finding in that region.** The engine tags actions by category, not region, so the old panel could show heart-rate advice under Kidneys with no kidney data. Actions now appear only if the region has a status from a real reading or a recently reported symptom. No action text was changed.
+- **One selection, one panel.** `useBodySelectionStore` holds `selectedRegionId` + `selectedOrganId`; the panel is keyed by region inside `AnimatePresence mode="wait"`, so a new pick closes the old panel first. The canvas is never remounted on a switch.
+- **The body screen is always dark** (`.holo-root`), in either theme. `dark:` utilities are forced on inside it through one `@custom-variant` in `globals.css`; outside it they behave as before.
+- **Layout follows the container width** (ResizeObserver, 960 px), not the window, so the crew drill-down gets the stacked layout when it is narrow. Wide: region list left, panel right, camera view shifted so the organ is not under the panel.
+- **Reduced motion:** no auto-rotation, no scan sweep, no ring spin, no pulse; camera and panel changes are instant. The scene then renders only on change (`frameloop="demand"`).
+- **Empty-state sentence kept word for word** ("No data yet. Complete a check-in to see this region's status.") because C16's e2e test looks for it. With no check-in the panel still opens (function text, hazards, sources) with every reading shown as "No data yet".
+
 **2026-11-15 — C15 crew overview choices**
 
 - **The overview lives at `/crew`, reached from More, and the link is shown only to commander, surgeon and admin.** Access is checked three times: the More row is hidden, the page refuses to render for the astronaut role, and every function in `lib/db/crewRepo.ts` takes the viewer's id and re-checks the role (`CrewAccessError`). `admin` is included because it already has crew-wide read on the server (`CREW_READ_ROLES`).
