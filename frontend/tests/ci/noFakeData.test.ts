@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-// @ts-expect-error -- plain .mjs script with no type declarations
 import { scanRepo, scanText } from "../../scripts/check-no-fake-data.mjs";
 
 interface Hit {
